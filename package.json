@@ -1,0 +1,24 @@
+{
+  "name": "icfp2",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@react-pdf/node": "^0.7.6",
+    "@react-pdf/renderer": "^1.0.0-alpha.15",
+    "axios": "^0.18.0",
+    "esm": "^3.0.74",
+    "fs-extra": "^7.0.0",
+    "lodash": "^4.17.10",
+    "qs": "^6.5.2",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "react-scripts": "1.1.5"
+  },
+  "scripts": {
+    "save": "babel-node --presets=react,env src/save ",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
