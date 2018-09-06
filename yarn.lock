@@ -1615,6 +1615,21 @@ caniuse-lite@^1.0.30000748, caniuse-lite@^1.0.30000792:
   version "1.0.30000882"
   resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000882.tgz#0d5066847a11a5af0e50ffce6c062ef0665f68ea"
 
+cape-lodash@^1.11.0:
+  version "1.13.2"
+  resolved "https://registry.yarnpkg.com/cape-lodash/-/cape-lodash-1.13.2.tgz#3f41a2ad9c876795ce9497da5c2f4e5b95f92486"
+  dependencies:
+    lodash "^4.17.4"
+
+cape-style@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/cape-style/-/cape-style-1.1.0.tgz#a2a330ce9dd9d7fe34e65183de0cc4ff211932fa"
+  dependencies:
+    cape-lodash "^1.11.0"
+    lodash "^4.17.4"
+    reselect "^3.0.0"
+    tinycolor2 "^1.4.1"
+
 capture-stack-trace@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/capture-stack-trace/-/capture-stack-trace-1.0.0.tgz#4a6fa07399c26bba47f0b2496b4d0fb408c5550d"
@@ -6450,6 +6465,10 @@ requires-port@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/requires-port/-/requires-port-1.0.0.tgz#925d2601d39ac485e091cf0da5c6e694dc3dcaff"
 
+reselect@^3.0.0:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/reselect/-/reselect-3.0.1.tgz#efdaa98ea7451324d092b2b2163a6a1d7a9a2147"
+
 resolve-cwd@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/resolve-cwd/-/resolve-cwd-2.0.0.tgz#00a9f7387556e27038eae232caa372a6a59b665a"
@@ -7194,6 +7213,10 @@ timers-browserify@^2.0.4:
 tiny-inflate@^1.0.0, tiny-inflate@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/tiny-inflate/-/tiny-inflate-1.0.2.tgz#93d9decffc8805bd57eae4310f0b745e9b6fb3a7"
+
+tinycolor2@^1.4.1:
+  version "1.4.1"
+  resolved "https://registry.yarnpkg.com/tinycolor2/-/tinycolor2-1.4.1.tgz#f4fad333447bc0b07d4dc8e9209d8f39a8ac77e8"
 
 tmp@^0.0.33:
   version "0.0.33"
