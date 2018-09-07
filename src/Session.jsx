@@ -6,9 +6,9 @@ import css from 'cape-style'
 const styles = StyleSheet.create(css('bgWashedBlue'))
 
 // Create Document Component
-function Session({SessionName}) {
+function Session({SessionName, SessionStartTime, SessionType}) {
   return (
-    <Text style={styles}>{SessionName}</Text>
+    <Text>{SessionStartTime}, {SessionName}, {SessionType}</Text>
   )
 }
 

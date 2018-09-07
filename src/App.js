@@ -18,6 +18,9 @@ const MyDocument = () => (
       <View style={styles.section}>
         {data.map((item, i) => <Session key={i} {...item} />)}
       </View>
+      <Text render={({ pageNumber, totalPages }) => (
+        `${pageNumber} / ${totalPages}`
+      )} fixed />
     </Page>
   </Document>
 );
