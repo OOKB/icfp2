@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
   },
   section: {
     fontFamily: 'Helvetica',
-    textAlign: 'center'
+    fontSize: '10'
   }
 });
 
