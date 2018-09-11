@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
     paddingLeft: '54',
   },
   section: {
-    fontFamily: 'Blackletter'
+    fontFamily: 'Blackletter',
     fontSize: '10',
     flexDirection: 'column',
     width: '100%',
