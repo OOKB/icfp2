@@ -3,6 +3,11 @@ import { Page, Text, View, Document, StyleSheet, Font } from '@react-pdf/rendere
 import data from './data'
 import Session from './Session'
 
+Font.register(
+  './UnifrakturCook-Bold.ttf',
+  { family: 'Blackletter' },
+);
+
 const styles = StyleSheet.create({
   page: {
     paddingTop: '36',
