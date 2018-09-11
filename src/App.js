@@ -1,12 +1,7 @@
 import React from 'react';
-import { Page, Text, View, Document, StyleSheet, Font } from '@react-pdf/renderer';
+import { Page, Text, View, Document, StyleSheet } from '@react-pdf/renderer';
 import data from './data'
 import Session from './Session'
-
-Font.register(
-  './UnifrakturCook-Bold.ttf',
-  { family: 'Blackletter' },
-);
 
 const styles = StyleSheet.create({
   page: {
@@ -16,10 +11,8 @@ const styles = StyleSheet.create({
     paddingLeft: '54',
   },
   section: {
-    fontFamily: 'Blackletter',
-    fontSize: '10',
-    flexDirection: 'column',
-    width: '100%',
+    fontFamily: 'Helvetica',
+    fontSize: '10'
   }
 });
 
@@ -27,7 +20,7 @@ const styles = StyleSheet.create({
 const MyDocument = () => (
   <Document>
     <Page size="A4" style={styles.page} wrap>
-      <View style={styles.section}>
+      <View style={styles.section} wrap>
         {data.map((item, i) => <Session key={i} {...item} />)}
       </View>
     </Page>
