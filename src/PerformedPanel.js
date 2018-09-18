@@ -1,19 +1,20 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 
-import Presentation from './Presentation';
-import Author from './Author';
+import Presentation from './Presentation'
+import Author from './Author'
 
 class PerformedPanel extends Component {
   render() {
-    const { sessionCode, sessionName, sessionRoom, sessionStartTime, sessionEndTime,
-            sessionDescription, sessionChairs, presentations, sessionType,
-          } = this.props;
+    const {
+      sessionCode, sessionName, sessionRoom, sessionStartTime, sessionEndTime,
+      sessionDescription, sessionChairs, presentations, sessionType,
+    } = this.props
     // const timeStr = `${sessionStartTime} - ${sessionEndTime}`;
 
-    let DescriptionEl = false;
+    let DescriptionEl = false
     if (sessionDescription) {
-      DescriptionEl =
-        <description dangerouslySetInnerHTML={{__html: sessionDescription}} />;
+      DescriptionEl = <description dangerouslySetInnerHTML={{ __html: sessionDescription }} />
     }
 
     return (
@@ -24,18 +25,18 @@ class PerformedPanel extends Component {
         {/* <starttime>{ timeStr }</starttime> */}
         <sessionroom>{ sessionRoom }</sessionroom>
 
-        { sessionChairs.map( item => (
+        { sessionChairs.map(item => (
           <Author key={item.iD} tagName="moderator" {...item} />
         ))}
 
         { DescriptionEl }
 
-        { presentations.map( item => (
+        { presentations.map(item => (
           <Presentation key={item.iD} {...item} />
         ))}
 
       </presentation>
-    );
+    )
   }
 }
 PerformedPanel.propTypes = {
@@ -43,8 +44,8 @@ PerformedPanel.propTypes = {
   sessionName: PropTypes.string.isRequired,
   sessionRoom: PropTypes.string.isRequired,
   sessionStartTime: PropTypes.string.isRequired,
-};
-export default PerformedPanel;
+}
+export default PerformedPanel
 
 // Preformed Panel
 // [Session Number (i.e. 1.1.08)] [Title of Preformed Panel]

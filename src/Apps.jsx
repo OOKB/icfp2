@@ -7,7 +7,7 @@ import SessionDayReview from './SessionDayReview'
 
 class Apps extends Component {
   render() {
-    const { items, type } = this.props.route
+    const { items, type } = this.props
     let ItemTemplate = SessionDay
     let keyFieldId = 'sessionDate'
 
@@ -26,7 +26,8 @@ class Apps extends Component {
   }
 }
 Apps.propTypes = {
-  route: PropTypes.object.isRequired,
+  items: PropTypes.array.isRequired,
+  type: PropTypes.string.isRequired,
 }
 
 export default Apps
