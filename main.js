@@ -11,6 +11,7 @@ const form = {
   FieldIDs: '8235,8242,8236,10113,8229,8239',
   AllAuthors: '1',
 }
+console.log(form)
 const options = {
   method: 'POST',
   headers: { 'content-type': 'application/x-www-form-urlencoded' },
@@ -25,7 +26,7 @@ axios(options)
   .then(fixData)
   .then(({ data, apiData }) => Promise.all([
     writeJson('data-raw.json', data, { spaces: 2 }),
-    writeJson('data.json', apiData, { spaces: 2 }),
+    writeJson('src/data.json', apiData, { spaces: 2 }),
   ]))
   .then(console.log)
   .catch(console.error)
