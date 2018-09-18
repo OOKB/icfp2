@@ -6,20 +6,33 @@
     "@react-pdf/node": "^0.7.6",
     "@react-pdf/renderer": "^1.0.0-alpha.15",
     "axios": "^0.18.0",
+    "better-console": "^1.0.1",
     "cape-style": "^1.1.0",
     "esm": "^3.0.74",
     "fs-extra": "^7.0.0",
+    "inflection": "^1.12.0",
     "lodash": "^4.17.10",
+    "lodash-humps": "^3.1.2",
     "qs": "^6.5.2",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
-    "react-scripts": "1.1.5"
+    "react-scripts": "1.1.5",
+    "sanitize-html": "^1.19.0"
   },
   "scripts": {
-    "save": "babel-node --presets=react,env src/save ",
+    "save": "babel-node --presets=react,env src/save",
+    "data": "node index",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "eslint": "^5.6.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-lodash-fp": "^2.2.0-a1",
+    "jest": "^23.6.0"
   }
 }
