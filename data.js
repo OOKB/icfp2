@@ -149,7 +149,7 @@ export default function fixData(data) {
   cli.log('transform new data')
   const items = _.map(humps(data), fixDataItem)
   apiData = {
-    posters: _.remove(items, { sessionType: 'Poster presentations' }),
+    posters: _.remove(items, { sessionType: 'Poster' }),
     sessions: items,
     // sessions: _.filter(items, (item) => {
     // return (item.sessionType === 'Oral Presentations' || item.sessionType === 'Preformed Panel')
