@@ -23,6 +23,7 @@ class Presentation extends Component {
     return (
       <poster>
         { id ? <sessionCode>{id}</sessionCode> : false }
+        <div class="francophone" />
         { title ? <postertitle>{title}</postertitle> : false }
         { PanelPresentationsEl }
         <authors>

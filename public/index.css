@@ -76,6 +76,7 @@ sessionDescription,
 moderator,
 sessionmoderator {
   display: block;
+  position: relative;
 }
 
 /** style some headlines **/
@@ -231,8 +232,9 @@ poster presenter {
 poster presenter::before {
   content: 'Presenter: ';
   font-size: .85rem;
-  font-weight: normal;
+  font-weight: bold;
   text-transform: uppercase;
+  font-style: normal;
 }
 
 .author, author, moderator {
@@ -341,4 +343,20 @@ description p:nth-child(2n+1) {
 author strong,
 strong {
   font-weight: 900;
+}
+
+.francophone {
+  height: 2em;
+  width: 2em;
+  background: url(francophone.svg) no-repeat center center;
+  background-size: contain;
+}
+
+.whatTrack {
+  height: 2em;
+  width: 2em;
+  background-color: red;
+  border-radius: 1em;
+  position: absolute;
+  left: 0;
 }
