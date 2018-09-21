@@ -366,23 +366,36 @@ strong {
 
 /* francophone chat bubble */
 .francophone {
-  height: 2em;
-  width: 2em;
+  height: 1.5em;
+  width: 1.5em;
   background: url(francophone-solid.svg) no-repeat center center;
   /* background: url(francophone.svg) no-repeat center center; */
   background-size: contain;
   position: absolute;
-  left: -2.125em;
-  margin-top: -.5em;
+}
+
+.poster .francophone {
+  left: 0;
+  top: 2.25em;
+  margin-top: 0;
+}
+
+.presentation .poster .francophone {
+  left: -1.75em;
+  top: .25em;
+}
+
+.presentation .poster .sessioncode {
+  display:none;
 }
 
 .whatTrack {
-  height: 1.5em;
-  width: 3.5em;
-  border-radius: 1em;
+  height: 3em;
+  width: 3em;
+  border-radius: 50%;
   position: absolute;
   left: 0;
-  margin-top: -.175em;
+  margin-top: -.5em;
   text-indent: 200%;
   overflow: hidden;
   white-space:nowrap;

@@ -5,6 +5,7 @@
   "dependencies": {
     "@react-pdf/node": "^0.7.6",
     "@react-pdf/renderer": "^1.0.0-alpha.15",
+    "ajv": "^6.5.3",
     "axios": "^0.18.0",
     "better-console": "^1.0.1",
     "cape-style": "^1.1.0",
