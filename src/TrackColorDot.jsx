@@ -17,6 +17,9 @@ const sessionColors = {
   faithFamilyPlanning: '#fad57c',
   urbanizationReproductiveHealth: '#decdba',
   advancesMonitoringEvaluationMethods: '#c8d29c',
+  // sideEvents: '#',
+  // implementingBestPracticesIbp: '#',
+  // rwandaSessions: '#',
 }
 
 function TrackColorDot({ trackId }) {
