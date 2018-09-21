@@ -19,7 +19,7 @@ class PerformedPanel extends Component {
 
     return (
       <presentation>
-        <SessionCode>{ sessionCode }</SessionCode>
+        <sessioncode>{ sessionCode }</sessioncode>
         <sessionname>{ sessionName }</sessionname>
         { trackName ? <trackname>{ trackName }</trackname> : false }
         <span className="session-type">{ sessionType }</span>
