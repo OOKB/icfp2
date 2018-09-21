@@ -133,12 +133,15 @@ function fixDataItem({
 }) {
   const newItem = {
     sessionChairs: sessionChairs.map(fixAuthor),
-    sessionCode: sessionCode || `[${sessionId.toString()}]`,
     sessionDate: sessionDate || 'none',
     sessionDescription: fixDescription(sessionDescription),
     sessionType: sessionType || 'Opening',
     trackId: titleId(rest.trackName),
     ...rest,
+  }
+  if (!sessionCode) {
+    newItem.sessionCode = `[${sessionId.toString()}]`
+    newItem.sessionCodeErr = true
   }
   newItem.presentations = presentations.map(
     (presentation, i) => fixPresentation(presentation, i, rest),
