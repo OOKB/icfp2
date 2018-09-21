@@ -263,8 +263,16 @@ poster-session .columns {
   word-wrap: normal;
 }
 
-.poster .author:first-of-type::before {
+.author::before {
   content: "Co-Author(s): ";
+  font-size: .85rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-style: normal;
+}
+
+.author ~ .author::before {
+  content: "";
 }
 
 .moderator:first-of-type::before {
@@ -286,12 +294,13 @@ strong.smallcaps {
   word-wrap: normal;
 }
 
-.person .fullname,
-.person .company {
+.person,
+.fullname,
+.company {
   display: inline;
 }
 
-.person .company::before {
+.company::before {
   content: ', ';
 }
 

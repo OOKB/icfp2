@@ -11,11 +11,11 @@ function Author({
   const fullName = sessionCodes ? `${lastname}, ${firstname};` : `${firstname} ${lastname}`
   return (
     <div className={getName(tagName, presenter)} {...other}>
-      <div className="person">
-        <div className="fullname">{fullName}</div>
-        { company ? <div className="company">{ company }</div> : false }
+      <p className="person">
+        <span className="fullname">{fullName}</span>
+        { company ? <span className="company">{ company }</span> : false }
         { sessionCodes ? <code dangerouslySetInnerHTML={{ __html: sessionCodes.join(', ') }} /> : false }
-      </div>
+      </p>
     </div>
   )
 }
