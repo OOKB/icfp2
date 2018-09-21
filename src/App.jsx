@@ -1,3 +1,4 @@
+import { keys } from 'lodash/fp'
 import React from 'react'
 import PropTypes from 'prop-types'
 import json from './data'
@@ -11,11 +12,12 @@ const pages = {
   '/sessions': { items: json.sessions, layout: 'sessions' },
   '/posters': { items: json.posters, layout: 'posters', keyId: 'sessionId' },
   '/authors': { items: json.authors, layout: 'authors', keyId: 'id' },
+  '/overview': { items: json.sessions, layout: 'overview' },
 }
 
 const App = ({ dispatch, pathname }) => {
   const pageInfo = pages[pathname]
-  if (!pageInfo) return <PageIndex dispatch={dispatch} />
+  if (!pageInfo) return <PageIndex dispatch={dispatch} pages={keys(pages)} />
   return <Apps {...pageInfo} />
 }
 App.propTypes = {

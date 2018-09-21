@@ -9,7 +9,7 @@ import SessionDayReview from './SessionDayReview'
 const templates = {
   posters: Poster,
   authors: Author,
-  review: SessionDayReview,
+  overview: SessionDayReview,
 }
 
 function Apps({ items, layout, keyId }) {

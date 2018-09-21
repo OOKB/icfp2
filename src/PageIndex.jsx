@@ -2,16 +2,15 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { createHistory } from 'redux-history-sync'
 
-const pages = ['posters', 'workshop', 'sessions', 'opening', 'authors']
 
 export function createOnClick(dispatch, pageId) {
   return (event) => {
     event.preventDefault()
-    return dispatch(createHistory(`/${pageId}`))
+    return dispatch(createHistory(pageId))
   }
 }
 
-function PageIndex({ dispatch }) {
+function PageIndex({ dispatch, pages }) {
   return (
     <div>
       <h2>Page Index</h2>
@@ -20,7 +19,7 @@ function PageIndex({ dispatch }) {
         {
           pages.map(pageId => (
             <li key={pageId}>
-              <a href={`/${pageId}`} onClick={createOnClick(dispatch, pageId)}>{pageId}</a>
+              <a href={pageId} onClick={createOnClick(dispatch, pageId)}>{pageId.substr(1)}</a>
             </li>
           ))
         }
@@ -30,5 +29,6 @@ function PageIndex({ dispatch }) {
 }
 PageIndex.propTypes = {
   dispatch: PropTypes.func.isRequired,
+  pages: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
 }
 export default PageIndex

@@ -128,17 +128,21 @@ function fixDescription(sessionDescription) {
 }
 
 function fixDataItem({
-  presentations, sessionDescription, sessionChairs, sessionDate, sessionType, ...rest
+  presentations, sessionCode, sessionDescription, sessionChairs,
+  sessionDate, sessionId, sessionType, ...rest
 }) {
   const newItem = {
-    presentations: presentations.map((presentation, i) => fixPresentation(presentation, i, rest)),
     sessionChairs: sessionChairs.map(fixAuthor),
+    sessionCode: sessionCode || `[${sessionId.toString()}]`,
     sessionDate: sessionDate || 'none',
     sessionDescription: fixDescription(sessionDescription),
     sessionType: sessionType || 'Opening',
     trackId: titleId(rest.trackName),
     ...rest,
   }
+  newItem.presentations = presentations.map(
+    (presentation, i) => fixPresentation(presentation, i, rest),
+  )
   // Add authors to index.
   if (newItem.sessionChairs.length) {
     _.each(newItem.sessionChairs, addAuthor(`<em>${newItem.sessionCode}</em>`))
