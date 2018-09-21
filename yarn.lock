@@ -1758,7 +1758,7 @@ caniuse-lite@^1.0.30000844:
   version "1.0.30000885"
   resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000885.tgz#e889e9f8e7e50e769f2a49634c932b8aee622984"
 
-cape-lodash@^1.11.0, cape-lodash@^1.12.1, cape-lodash@^1.7.0, cape-lodash@^1.8.0:
+cape-lodash@^1.11.0, cape-lodash@^1.12.0, cape-lodash@^1.12.1, cape-lodash@^1.13.1, cape-lodash@^1.7.0, cape-lodash@^1.8.0:
   version "1.13.2"
   resolved "https://registry.yarnpkg.com/cape-lodash/-/cape-lodash-1.13.2.tgz#3f41a2ad9c876795ce9497da5c2f4e5b95f92486"
   dependencies:
@@ -1771,6 +1771,16 @@ cape-redux@^3.1.0:
     cape-lodash "^1.8.0"
     lodash "^4.17.2"
     redux "^3.6.0"
+
+cape-router@^1.1.5:
+  version "1.1.5"
+  resolved "https://registry.yarnpkg.com/cape-router/-/cape-router-1.1.5.tgz#3db35b757490dc1e6a62a70c600e233a36f787bb"
+  dependencies:
+    cape-select "^2.4.0"
+    location-info "^4.5.0"
+    lodash "^4.17.4"
+    redux-history-sync "^3.2.2"
+    reselect "^3.0.1"
 
 cape-select@^2.4.0:
   version "2.4.0"
@@ -5106,6 +5116,17 @@ locate-path@^2.0.0:
     p-locate "^2.0.0"
     path-exists "^3.0.0"
 
+location-info@^4.5.0:
+  version "4.5.0"
+  resolved "https://registry.yarnpkg.com/location-info/-/location-info-4.5.0.tgz#07309ddade2046771060aa2722a51a95b8d66b79"
+  dependencies:
+    cape-lodash "^1.12.0"
+    cape-redux "^3.1.0"
+    cape-select "^2.4.0"
+    lodash "^4.17.4"
+    reselect "^3.0.0"
+    url-pattern "^1.0.2"
+
 lodash-es@^4.17.5, lodash-es@^4.2.1:
   version "4.17.11"
   resolved "https://registry.yarnpkg.com/lodash-es/-/lodash-es-4.17.11.tgz#145ab4a7ac5c5e52a3531fb4f310255a152b4be0"
@@ -6483,7 +6504,7 @@ promise@^7.1.1:
   dependencies:
     asap "~2.0.3"
 
-prop-types@^15.5.10, prop-types@^15.6.0, prop-types@^15.6.2:
+prop-types@^15.5.10, prop-types@^15.5.8, prop-types@^15.6.0, prop-types@^15.6.2:
   version "15.6.2"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.6.2.tgz#05d5ca77b4453e985d60fc7ff8c859094a497102"
   dependencies:
@@ -6642,6 +6663,15 @@ react-dev-utils@^5.0.2:
     strip-ansi "3.0.1"
     text-table "0.2.0"
 
+react-dom@^16.2.0:
+  version "16.5.2"
+  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.5.2.tgz#b69ee47aa20bab5327b2b9d7c1fe2a30f2cfa9d7"
+  dependencies:
+    loose-envify "^1.1.0"
+    object-assign "^4.1.1"
+    prop-types "^15.6.2"
+    schedule "^0.5.0"
+
 react-dom@^16.4.2:
   version "16.4.2"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.4.2.tgz#4afed569689f2c561d2b8da0b819669c38a0bda4"
@@ -6664,7 +6694,7 @@ react-reconciler@^0.7.0:
     object-assign "^4.1.1"
     prop-types "^15.6.0"
 
-react-redux@^5.0.7:
+react-redux@^5.0.4, react-redux@^5.0.7:
   version "5.0.7"
   resolved "http://registry.npmjs.org/react-redux/-/react-redux-5.0.7.tgz#0dc1076d9afb4670f993ffaef44b8f8c1155a4c8"
   dependencies:
@@ -6719,6 +6749,15 @@ react-scripts@1.1.5:
     whatwg-fetch "2.0.3"
   optionalDependencies:
     fsevents "^1.1.3"
+
+react@^16.2.0:
+  version "16.5.2"
+  resolved "https://registry.yarnpkg.com/react/-/react-16.5.2.tgz#19f6b444ed139baa45609eee6dc3d318b3895d42"
+  dependencies:
+    loose-envify "^1.1.0"
+    object-assign "^4.1.1"
+    prop-types "^15.6.2"
+    schedule "^0.5.0"
 
 react@^16.4.1, react@^16.4.2:
   version "16.4.2"
@@ -6835,7 +6874,24 @@ redux-devtools-extension@^2.13.5:
   version "2.13.5"
   resolved "https://registry.yarnpkg.com/redux-devtools-extension/-/redux-devtools-extension-2.13.5.tgz#3ff34f7227acfeef3964194f5f7fc2765e5c5a39"
 
-redux-history-sync@^3.2.2:
+redux-history-component@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/redux-history-component/-/redux-history-component-2.2.0.tgz#389a05c88cad02a7475d0280592368a2cae6706a"
+  dependencies:
+    cape-lodash "^1.13.1"
+    cape-router "^1.1.5"
+    classnames "^2.2.5"
+    location-info "^4.5.0"
+    lodash "^4.17.4"
+    prop-types "^15.5.8"
+    react "^16.2.0"
+    react-dom "^16.2.0"
+    react-redux "^5.0.4"
+    redux "^3.7.2"
+    redux-history-sync "^3.1.0"
+    reselect "^3.0.1"
+
+redux-history-sync@^3.1.0, redux-history-sync@^3.2.2:
   version "3.2.2"
   resolved "https://registry.yarnpkg.com/redux-history-sync/-/redux-history-sync-3.2.2.tgz#8244ed8123367122f6d0002193c94a3545a9551b"
   dependencies:
@@ -6847,7 +6903,11 @@ redux-history-sync@^3.2.2:
     redux "^3.6.0"
     reselect "^3.0.1"
 
-redux@^3.6.0:
+redux-thunk@^2.3.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/redux-thunk/-/redux-thunk-2.3.0.tgz#51c2c19a185ed5187aaa9a2d08b666d0d6467622"
+
+redux@^3.6.0, redux@^3.7.2:
   version "3.7.2"
   resolved "https://registry.yarnpkg.com/redux/-/redux-3.7.2.tgz#06b73123215901d25d065be342eb026bc1c8537b"
   dependencies:
@@ -7178,6 +7238,12 @@ sanitize-html@^1.19.0:
 sax@^1.2.1, sax@^1.2.4, sax@~1.2.1:
   version "1.2.4"
   resolved "https://registry.yarnpkg.com/sax/-/sax-1.2.4.tgz#2816234e2378bddc4e5354fab5caa895df7100d9"
+
+schedule@^0.5.0:
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/schedule/-/schedule-0.5.0.tgz#c128fffa0b402488b08b55ae74bb9df55cc29cc8"
+  dependencies:
+    object-assign "^4.1.1"
 
 schema-utils@^0.3.0:
   version "0.3.0"
@@ -8063,6 +8129,10 @@ url-parse@^1.1.8, url-parse@^1.4.3:
   dependencies:
     querystringify "^2.0.0"
     requires-port "^1.0.0"
+
+url-pattern@^1.0.2:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/url-pattern/-/url-pattern-1.0.3.tgz#0409292471b24f23c50d65a47931793d2b5acfc1"
 
 url@^0.11.0:
   version "0.11.0"
