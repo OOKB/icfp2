@@ -152,6 +152,8 @@ export default function fixData(data) {
   const items = _.map(humps(data), fixDataItem)
   apiData = {
     posters: _.remove(items, { sessionType: 'Poster' }),
+    opening: _.remove(items, { sessionType: '' }),
+    workshop: _.remove(items, { sessionType: 'Workshop' }),
     sessions: items,
     trackIds: _.uniq(_.map(items, 'trackId')),
     // sessions: _.filter(items, (item) => {
