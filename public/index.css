@@ -57,7 +57,6 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0;
 }
 
-<<<<<<< HEAD
 .postertitle,
 .title,
 .day,
@@ -77,27 +76,6 @@ h1, h2, h3, h4, h5, h6 {
 .moderator,
 .sessionmoderator,
 .trackname {
-=======
-postertitle,
-title,
-day,
-sessioncode,
-sessionname,
-sessiontime,
-sessionroom,
-poster-session,
-presentation,
-poster,
-panel,
-columns,
-timeslot,
-authors,
-description,
-sessionDescription,
-moderator,
-sessionmoderator,
-trackname {
->>>>>>> 640e9e9f73d95c3cad041c791e1e8bcaa87319f3
   display: block;
   position: relative;
 }
@@ -190,32 +168,19 @@ poster-session .columns {
   page-break-inside:avoid;
 }
 
-<<<<<<< HEAD
 .sessioncode,
 .sessionname,
 .sessionroom,
 .moderator,
 .postertitle,
-.author {
-=======
-sessioncode,
-sessionname,
-sessionroom,
-moderator,
-postertitle,
-author {
->>>>>>> 640e9e9f73d95c3cad041c791e1e8bcaa87319f3
+.author
   page-break-before: auto;
   page-break-after: auto;
   page-break-inside: avoid;
 }
 
 /** id and title **/
-<<<<<<< HEAD
 .posterID, .sessioncode {
-=======
-.posterID, sessioncode {
->>>>>>> 640e9e9f73d95c3cad041c791e1e8bcaa87319f3
   margin: 0 0 0 -4rem;
   font-weight: 100;
   float: left;
