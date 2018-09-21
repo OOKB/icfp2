@@ -3,11 +3,12 @@ import PropTypes from 'prop-types'
 
 import Presentation from './Presentation'
 import Author from './Author'
+import TrackColorDot from './TrackColorDot'
 
 class PerformedPanel extends Component {
   render() {
     const {
-      sessionCode, sessionName, sessionRoom, sessionStartTime, sessionEndTime,
+      sessionCode, sessionId, sessionName, sessionRoom, sessionStartTime, sessionEndTime,
       sessionDescription, sessionChairs, presentations, sessionType, trackName,
     } = this.props
     // const timeStr = `${sessionStartTime} - ${sessionEndTime}`;
@@ -20,6 +21,7 @@ class PerformedPanel extends Component {
     return (
       <presentation>
         <sessioncode>{ sessionCode }</sessioncode>
+        <TrackColorDot sessionId={sessionId} />
         <sessionname>{ sessionName }</sessionname>
         { trackName ? <trackname>{ trackName }</trackname> : false }
         <span className="session-type">{ sessionType }</span>
