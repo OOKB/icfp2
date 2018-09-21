@@ -18,13 +18,13 @@ class PerformedPanel extends Component {
     }
 
     return (
-      <presentation>
-        <SessionCode>{ sessionCode }</SessionCode>
-        <sessionname>{ sessionName }</sessionname>
-        { trackName ? <trackname>{ trackName }</trackname> : false }
+      <div className="presentation">
+        <div className="sessioncode">{ sessionCode }</div>
+        <div className="sessionname">{ sessionName }</div>
+        { trackName ? <div className="trackname">{ trackName }</div> : false }
         <span className="session-type">{ sessionType }</span>
         {/* <starttime>{ timeStr }</starttime> */}
-        <sessionroom>{ sessionRoom }</sessionroom>
+        <div className="sessionroom">{ sessionRoom }</div>
 
         { sessionChairs.map(item => (
           <Author key={item.iD} tagName="moderator" {...item} />
@@ -36,7 +36,7 @@ class PerformedPanel extends Component {
           <Presentation key={item.iD} {...item} />
         ))}
 
-      </presentation>
+      </div>
     )
   }
 }

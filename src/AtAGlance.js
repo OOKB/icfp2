@@ -8,7 +8,7 @@ class AtAGlance extends Component {
     const timeStr = `${sessionStartTime} - ${sessionEndTime}`
 
     return (
-      <ataglance>
+      <div className="ataglance">
         <h3 className="breaker">For the At-A-Glance sections</h3>
         <h3>{timeStr}</h3>
 
@@ -17,7 +17,7 @@ class AtAGlance extends Component {
             <SessionsList key={item.sessionCode} {...item} />
           ))}
         </div>
-      </ataglance>
+      </div>
     )
   }
 }

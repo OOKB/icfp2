@@ -7,7 +7,7 @@ class Presentation extends Component {
   render() {
     const { sessionDate, timeSlots } = this.props
     return (
-      <day>
+      <div className="day">
         <h2>{sessionDate}</h2>
         {
           timeSlots.map((item) => {
@@ -15,7 +15,7 @@ class Presentation extends Component {
             return <TimeSlot key={key} {...item} />
           })
         }
-      </day>
+      </div>
     )
   }
 }

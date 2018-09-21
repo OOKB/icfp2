@@ -6,7 +6,7 @@ class Presentation extends Component {
   render() {
     const { sessionDate, timeSlots } = this.props
     return (
-      <day>
+      <div className="day">
 
         <h2>{sessionDate}</h2>
         <p>At-a-glance</p>
@@ -17,7 +17,7 @@ class Presentation extends Component {
           })
         }
 
-      </day>
+      </div>
     )
   }
 }

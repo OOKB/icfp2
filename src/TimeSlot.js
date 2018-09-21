@@ -9,14 +9,14 @@ class Timeslot extends Component {
     const timeStr = `${sessionStartTime} - ${sessionEndTime}`
 
     return (
-      <timeslot>
+      <div className="timeslot">
         <h3>{timeStr}</h3>
-        <columns>
+        <div className="columns">
           { sessions.map(item => (
             <PerformedPanel key={item.sessionCode} {...item} />
           ))}
-        </columns>
-      </timeslot>
+        </div>
+      </div>
     )
   }
 }

@@ -11,21 +11,21 @@ class Poster extends Component {
     const sessionTime = `${sessionStartTime}-${sessionEndTime}`
 
     return (
-      <poster-session>
+      <div className="poster-session">
 
         {/* 1 set of meta-data listings per poster-session */}
-        <sessionName>{sessionName}</sessionName>
-        <sessionTime>{sessionTime}</sessionTime>
-        <sessionRoom>{sessionRoom}</sessionRoom>
+        <div className="sessionName">{sessionName}</div>
+        <div className="sessionTime">{sessionTime}</div>
+        <div className="sessionRoom">{sessionRoom}</div>
         {/* <!-- day? --> */}
 
-        <columns>
+        <div className="columns">
           { presentations.map(item => (
             <Presentation key={item.id} {...item} />
           ))}
-        </columns>
+        </div>
 
-      </poster-session>
+      </div>
     )
   }
 }

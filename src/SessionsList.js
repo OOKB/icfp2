@@ -11,11 +11,11 @@ class SessionsList extends Component {
     return (
       <div className="item presentation">
         { separator }
-        <SessionCode>{ sessionCode }</SessionCode>
+        <div className="sessioncode">{ sessionCode }</div>
         { separator }
-        <sessionname><strong>{ sessionName }</strong></sessionname>
+        <div className="sessionname"><strong>{ sessionName }</strong></div>
         { separator }
-        <sessionroom>{ sessionRoom }</sessionroom>
+        <div className="sessionroom">{ sessionRoom }</div>
         { separator }
       </div>
     )

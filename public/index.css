@@ -57,25 +57,25 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0;
 }
 
-postertitle,
-title,
-day,
-SessionCode,
-sessionname,
-sessiontime,
-sessionroom,
-poster-session,
-presentation,
-poster,
-panel,
-columns,
-timeslot,
-authors,
-description,
-sessionDescription,
-moderator,
-sessionmoderator,
-trackname {
+.postertitle,
+.title,
+.day,
+.sessioncode,
+.sessionname,
+.sessiontime,
+.sessionroom,
+.poster-session,
+.presentation,
+.poster,
+.panel,
+.columns,
+.timeslot,
+.authors,
+.description,
+.sessionDescription,
+.moderator,
+.sessionmoderator,
+.trackname {
   display: block;
   position: relative;
 }
@@ -92,14 +92,14 @@ h1 {
 }
 
 h2,h3,h4,h5,h6,
-postertitle,
-title {
+.postertitle,
+.title {
   font-size: 1rem;
   font-weight: 700;
 }
 
-day > h2,
-poster-session sessionname {
+.day > h2,
+.poster-session .sessionname {
   font-family: "League Gothic", LeagueGothic, sans-serif;
   font-size: 3rem;
   font-weight: 400;
@@ -107,28 +107,26 @@ poster-session sessionname {
 
 /** style main poster session times **/
 .poster-session,
-poster-session,
-day,
-timeslot {
+.day,
+.timeslot {
   margin-top:1.0833in;
   margin-bottom:1.0833in;
   page-break-before: always;
 }
 
-timeslot h3 {
+.timeslot h3 {
   page-break-after: always;
 }
 
-h2 + timeslot {
+h2 + .timeslot {
   margin-top: 0;
 }
 
-poster-session .columns,
-poster-session columns {
+poster-session .columns {
   margin-top: 1.2rem;
 }
 
-.columns, columns {
+.columns {
   -webkit-column-count: 2; /* Chrome, Safari, Opera */
   -moz-column-count: 2; /* Firefox */
   column-count: 2;
@@ -138,18 +136,18 @@ poster-session columns {
 }
 
 .time,
-sessiontime,
-timeslot > h3 {
+.sessiontime,
+.timeslot > h3 {
   font-size: 2rem;
   font-weight: 100;
 }
 
-timeslot > h3 {
+.timeslot > h3 {
   margin-bottom: 2rem;
 }
 
 .location,
-poster-session sessionroom {
+.poster-session .sessionroom {
   text-transform: uppercase;
   font-weight: 100;
   line-height: 2.4;
@@ -157,9 +155,9 @@ poster-session sessionroom {
 }
 
 /** main poster block settings **/
-.poster, poster,
-.presentation, presentation,
-.panel, panel {
+.poster,
+.presentation,
+.panel {
   border-top: 1pt solid black;
   font-size: 1rem;
   padding-top: 1rem;
@@ -170,34 +168,34 @@ poster-session sessionroom {
   page-break-inside:avoid;
 }
 
-SessionCode,
-sessionname,
-sessionroom,
-moderator,
-postertitle,
-author {
+.sessioncode,
+.sessionname,
+.sessionroom,
+.moderator,
+.postertitle,
+.author {
   page-break-before: auto;
   page-break-after: auto;
   page-break-inside: avoid;
 }
 
 /** id and title **/
-.posterID, SessionCode {
+.posterID, .sessioncode {
   margin: 0 0 0 -4rem;
   font-weight: 100;
   float: left;
 }
 
 /** Presentation/Panel settings **/
-panel poster,
-presentation poster {
+.panel .poster,
+.presentation .poster {
   border-top: none;
   padding: .5rem 0 0 1rem;
   font-family: "Arnhem Pro", ArnhemPro, Georgia, serif;
 }
 
-panel poster::before,
-presentation poster::before,
+.panel .poster::before,
+.presentation .poster::before,
 .panel-presenter::before{
   content: "- ";
   display: block;
@@ -217,20 +215,19 @@ presentation poster::before,
   margin-top: 0;
 }
 
-.panel-presenter + authors {
+.panel-presenter + .authors {
   margin-top: .5em;
   margin-left: -1em;
 }
 
 /** style author names **/
-poster .presenter,
-poster presenter {
+.poster .presenter {
   font-weight: 300;
   font-style: italic;
   display: block;
 }
 
-poster presenter::before {
+.poster .presenter::before {
   content: 'Presenter: ';
   font-size: .85rem;
   font-weight: bold;
@@ -238,110 +235,115 @@ poster presenter::before {
   font-style: normal;
 }
 
-.author, author, moderator {
+.author, .moderator {
   display: inline;
 }
 
-authors, author, moderator {
+.authors, .author, .moderator {
   font-weight: 300;
   word-wrap: normal;
 }
 
-author::after,
-moderator::after {
+.author::after,
+.moderator::after {
   content: "; ";
   display: inline;
   margin-right: .225em;
   word-wrap: normal;
 }
 
-author:last-child::after,
-author:last-of-type::after,
-moderator:last-child::after,
-moderator:last-of-type::after {
+.author:last-child::after,
+.author:last-of-type::after,
+.moderator:last-child::after,
+.moderator:last-of-type::after {
   content: "";
   display: none;
   margin-right: 0;
   word-wrap: normal;
 }
 
-poster author:first-of-type::before {
+.poster .author:first-of-type::before {
   content: "Co-Author(s): ";
 }
 
-moderator:first-of-type::before {
+.moderator:first-of-type::before {
   content: "Moderator(s): ";
 }
 
-presentation sessionroom::before {
+.presentation .sessionroom::before {
   content: 'Location: ';
 }
 
-moderator:first-of-type::before,
-presentation sessionroom::before {
+.moderator:first-of-type::before,
+.presentation .sessionroom::before {
   display: inline-block;
   margin-top: .5em;
   padding-right: .3em;
 }
 
-poster author:first-of-type::before,
-moderator:first-of-type::before,
-presentation sessionroom::before {
+.poster .author:first-of-type::before,
+.moderator:first-of-type::before,
+.presentation .sessionroom::before {
   font-size: .85rem;
   font-weight: bold;
   text-transform: uppercase;
   word-wrap: normal;
 }
 
-person company::before {
+.person .fullname,
+.person .company {
+  display: inline;
+}
+
+.person .company::before {
   content: ', ';
 }
 
 /** presentation / abstract / panel additions **/
-panel sessionname,
-presentation sessionname {
+.panel .sessionname,
+.presentation .sessionname {
   font-weight: bold;
 }
 
-presentation .session-type {
+.presentation .session-type {
   font-weight: 100;
 }
 
-presentation::after {
+.presentation::after {
   content: '';
   display: table;
   clear: both;
 }
 
 /** At A Glance Additions */
-ataglance { display: block; }
+.ataglance { display: block; }
 
-ataglance SessionCode { float: none; margin: 0; padding: 0;}
+.ataglance .sessioncode { float: none; margin: 0; padding: 0;}
 
-ataglance .sessions-list,
-ataglance .presentation {
+.ataglance .sessions-list,
+.ataglance .presentation {
   padding-left: 0;
 }
 
-ataglance .presentation * {
+.ataglance .presentation * {
   display: inline;
 }
 
-description * {
+.description * {
   margin-top: 0;
   margin-bottom: 0;
 }
 
-description p:nth-child(2n+1) {
+.description p:nth-child(2n+1) {
   margin-top: .5em;
 }
 
-#root > div > authors,
-#root > div > authors author {
+#root > div > .authors,
+#root > div > .authors .author {
   display: block;
 }
 
-author strong,
+.author strong,
 strong {
   font-weight: 900;
 }
@@ -353,7 +355,7 @@ strong {
   background-size: contain;
 }
 
-trackname::before {
+.trackname::before {
   height: 2em;
   width: 2em;
   background-color: red;

@@ -13,21 +13,21 @@ function Presentation({
   if (panelPresentations) {
     PanelPresentationsEl = panelPresentations.map(presentation => (
       <div className="panel-presenter">
-        <postertitle>{presentation.title}</postertitle>
-        <presenter>{presentation.presenter}</presenter>
+        <div className="postertitle">{presentation.title}</div>
+        <div className="presenter">{presentation.presenter}</div>
       </div>
     ))
   }
   return (
-    <poster>
-      { id ? <SessionCode>{id}</SessionCode> : false }
+    <div className="poster">
+      { id ? <div className="sessioncode">{id}</div> : false }
       { onlyFrench && <div className="francophone" /> }
-      { title ? <postertitle>{title}</postertitle> : false }
+      { title ? <div className="postertitle">{title}</div> : false }
       { PanelPresentationsEl }
-      <authors>
+      <div className="authors">
         { authors.map(item => <Author key={item.contactID} {...item} />) }
-      </authors>
-    </poster>
+      </div>
+    </div>
   )
 }
 
