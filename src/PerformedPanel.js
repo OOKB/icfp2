@@ -20,13 +20,13 @@ class PerformedPanel extends Component {
 
     return (
       <div className="presentation">
-        <div className="sessioncode">{ sessionCode }</div>
+        { sessionCode ?  <div className="sessioncode">{ sessionCode }</div> : false }
         <div className="sessionname">{ sessionName }</div>
-        <span className="session-type">{ sessionType }</span>
+        { sessionType ? <div className="session-type"><strong className="smallcaps">Type:</strong> { sessionType }</div> : false }
         <TrackColorDot sessionId={sessionId} />
-        { trackName ? <div className="trackname">{ trackName }</div> : false }
+        { trackName ? <div className="trackname"><strong className="smallcaps">Track:</strong> { trackName }</div> : false }
         {/* <starttime>{ timeStr }</starttime> */}
-        <div className="sessionroom">{ sessionRoom }</div>
+        { trackName ? <div className="sessionroom"><strong className="smallcaps">Location:</strong> { sessionRoom }</div> : false }
 
         { sessionChairs.map(item => (
           <Author key={item.iD} tagName="moderator" {...item} />
