@@ -46,13 +46,13 @@ function PerformedPanel(props) {
       ) : false }
 
       { sessionChairs.map(item => (
-        <Author key={item.iD} tagName="moderator" {...item} />
+        <Author key={item.id} tagName="moderator" {...item} />
       ))}
 
       { DescriptionEl }
 
       { presentations.map(item => (
-        <Presentation key={item.iD} {...item} />
+        <Presentation key={item.id} {...item} />
       ))}
 
     </div>
