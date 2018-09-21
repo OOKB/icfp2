@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 
 import Presentation from './Presentation'
@@ -7,7 +7,7 @@ import TrackColorDot from './TrackColorDot'
 
 function PerformedPanel(props) {
   const {
-    sessionCode, sessionName, sessionRoom, sessionStartTime, sessionEndTime,
+    sessionCode, sessionName, sessionRoom,
     sessionDescription, sessionChairs, presentations, sessionType, trackId, trackName,
   } = props
   // const timeStr = `${sessionStartTime} - ${sessionEndTime}`;

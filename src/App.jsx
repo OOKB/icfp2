@@ -16,8 +16,7 @@ const pages = {
 const App = ({ dispatch, pathname }) => {
   const pageInfo = pages[pathname]
   if (!pageInfo) return <PageIndex dispatch={dispatch} />
-  const { items, layout } = pageInfo
-  return <Apps items={items} type={layout} />
+  return <Apps {...pageInfo} />
 }
 App.propTypes = {
   dispatch: PropTypes.func.isRequired,

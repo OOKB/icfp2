@@ -12,11 +12,11 @@ const templates = {
   review: SessionDayReview,
 }
 
-function Apps({ items, type, keyId }) {
-  const ItemTemplate = templates[type] || SessionDay
+function Apps({ items, layout, keyId }) {
+  const ItemTemplate = templates[layout] || SessionDay
 
   return (
-    <div id={`type-${type}`}>
+    <div id={`type-${layout}`}>
       { items.map(item => <ItemTemplate key={item[keyId]} {...item} />) }
     </div>
   )
@@ -27,7 +27,7 @@ Apps.defaultProps = {
 Apps.propTypes = {
   items: PropTypes.arrayOf(PropTypes.object).isRequired,
   keyId: PropTypes.string,
-  type: PropTypes.string.isRequired,
+  layout: PropTypes.string.isRequired,
 }
 
 export default Apps
