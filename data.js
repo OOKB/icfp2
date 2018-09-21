@@ -180,7 +180,7 @@ export default function fixData(data) {
     posters: Poster,
     opening: addGrouping(Opening),
     workshop: addGrouping(Workshop),
-    sessions: addGrouping(_.concat(_.values(sessions))),
+    sessions: addGrouping(_.flatten(_.values(sessions))),
     // sessions: _.filter(items, (item) => {
     // return (item.sessionType === 'Oral Presentations' || item.sessionType === 'Preformed Panel')
     // })
