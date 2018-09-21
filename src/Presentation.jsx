@@ -20,7 +20,7 @@ function Presentation({
   }
   return (
     <poster>
-      { id ? <SessionCode>{id}</SessionCode> : false }
+      { id ? <sessioncode>{id}</sessioncode> : false }
       { onlyFrench && <div className="francophone" /> }
       { title ? <postertitle>{title}</postertitle> : false }
       { PanelPresentationsEl }
