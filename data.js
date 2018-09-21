@@ -177,7 +177,7 @@ export default function fixData(data) {
   apiData = {
     trackIds: _.uniq(_.map(items, 'trackId')),
     sessionIds: _.keys(sessions),
-    posters: addGrouping(Poster),
+    posters: Poster,
     opening: addGrouping(Opening),
     workshop: addGrouping(Workshop),
     sessions: addGrouping(_.concat(_.values(sessions))),
