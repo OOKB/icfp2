@@ -26,6 +26,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
+    "tests": "jest --watch",
     "eject": "react-scripts eject"
   },
   "devDependencies": {
@@ -38,7 +39,6 @@
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jsx-a11y": "^6.1.1",
     "eslint-plugin-lodash-fp": "^2.2.0-a1",
-    "eslint-plugin-react": "^7.11.1",
-    "jest": "^23.6.0"
+    "eslint-plugin-react": "^7.11.1"
   }
 }
