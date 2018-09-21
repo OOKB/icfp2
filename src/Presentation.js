@@ -6,7 +6,7 @@ import Author from './Author'
 class Presentation extends Component {
   render() {
     const {
-      authors, description, panelPresentations, id,
+      authors, title, panelPresentations, id,
     } = this.props
 
     // const [presenter, ...otherAuthors] = authors;
@@ -23,7 +23,7 @@ class Presentation extends Component {
     return (
       <poster>
         { id ? <sessionCode>{id}</sessionCode> : false }
-        { description.title ? <postertitle>{description.title}</postertitle> : false }
+        { title ? <postertitle>{title}</postertitle> : false }
         { PanelPresentationsEl }
         <authors>
           { authors.map(item => <Author key={item.contactID} {...item} />) }
@@ -34,7 +34,7 @@ class Presentation extends Component {
 }
 Presentation.propTypes = {
   authors: PropTypes.array.isRequired,
-  description: PropTypes.object.isRequired,
+  title: PropTypes.object.isRequired,
   panelPresentations: PropTypes.array,
   id: PropTypes.string,
 }
