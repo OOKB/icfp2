@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 class SessionsList extends Component {
   render() {
     const {
-      SessionCode, sessionName, sessionRoom, sessionStartTime, sessionEndTime,
+      sessionCode, sessionName, sessionRoom, sessionStartTime, sessionEndTime,
     } = this.props
     const timeStr = `${sessionStartTime} - ${sessionEndTime}`
     const separator = '\u0009'
@@ -11,7 +11,7 @@ class SessionsList extends Component {
     return (
       <div className="item presentation">
         { separator }
-        <SessionCode>{ SessionCode }</SessionCode>
+        <SessionCode>{ sessionCode }</SessionCode>
         { separator }
         <sessionname><strong>{ sessionName }</strong></sessionname>
         { separator }

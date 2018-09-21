@@ -7,7 +7,7 @@ import Author from './Author'
 class PerformedPanel extends Component {
   render() {
     const {
-      SessionCode, sessionName, sessionRoom, sessionStartTime, sessionEndTime,
+      sessionCode, sessionName, sessionRoom, sessionStartTime, sessionEndTime,
       sessionDescription, sessionChairs, presentations, sessionType, trackName,
     } = this.props
     // const timeStr = `${sessionStartTime} - ${sessionEndTime}`;
@@ -19,7 +19,7 @@ class PerformedPanel extends Component {
 
     return (
       <presentation>
-        <SessionCode>{ SessionCode }</SessionCode>
+        <SessionCode>{ sessionCode }</SessionCode>
         <sessionname>{ sessionName }</sessionname>
         { trackName ? <trackname>{ trackName }</trackname> : false }
         <span className="session-type">{ sessionType }</span>
@@ -41,7 +41,7 @@ class PerformedPanel extends Component {
   }
 }
 PerformedPanel.propTypes = {
-  SessionCode: PropTypes.string.isRequired,
+  sessionCode: PropTypes.string.isRequired,
   sessionName: PropTypes.string.isRequired,
   sessionRoom: PropTypes.string.isRequired,
   sessionStartTime: PropTypes.string.isRequired,
