@@ -3,7 +3,7 @@ import _ from 'lodash'
 import humps from 'lodash-humps'
 import { titleize } from 'inflection'
 import sanitizeHtml from 'sanitize-html'
-import titleId from './src/titleid'
+import titleId from './src/titleId'
 
 const authorIndex = {}
 
@@ -21,12 +21,14 @@ function doTitleize(str) {
 
 function addAuthor(sessionCode) {
   return ({ firstname, lastname, presenter }) => {
-    const id = firstname + lastname
+    const id = titleId(`${firstname} ${lastname}`)
     const sessCode = presenter ? `<strong>${sessionCode}</strong>` : sessionCode
     if (authorIndex[id]) {
       authorIndex[id].sessionCodes.push(sessCode)
     } else {
-      authorIndex[id] = { firstname, lastname, sessionCodes: [sessCode] }
+      authorIndex[id] = {
+        firstname, lastname, sessionCodes: [sessCode], id,
+      }
     }
   }
 }

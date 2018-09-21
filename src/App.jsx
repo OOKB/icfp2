@@ -9,7 +9,8 @@ const pages = {
   '/opening': { items: json.opening, layout: 'sessions' },
   '/workshop': { items: json.workshop, layout: 'sessions' },
   '/sessions': { items: json.sessions, layout: 'sessions' },
-  '/posters': { items: json.posters, layout: 'posters' },
+  '/posters': { items: json.posters, layout: 'posters', keyId: 'sessionId' },
+  '/authors': { items: json.authors, layout: 'authors', keyId: 'id' },
 }
 
 const App = ({ dispatch, pathname }) => {

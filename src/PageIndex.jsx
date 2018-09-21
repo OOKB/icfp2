@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { createHistory } from 'redux-history-sync'
 
-const pages = ['posters', 'workshop', 'sessions', 'opening']
+const pages = ['posters', 'workshop', 'sessions', 'opening', 'authors']
 
 export function createOnClick(dispatch, pageId) {
   return (event) => {
