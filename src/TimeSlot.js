@@ -13,7 +13,7 @@ class Timeslot extends Component {
         <h3>{timeStr}</h3>
         <columns>
           { sessions.map( item => (
-            <PerformedPanel key={item.sessionCode} {...item} />
+            <PerformedPanel key={item.SessionCode} {...item} />
           ))}
         </columns>
       </timeslot>

@@ -14,7 +14,7 @@ class AtAGlance extends Component {
 
         <div className="sessions-list">
           { sessions.map(item => (
-            <SessionsList key={item.sessionCode} {...item} />
+            <SessionsList key={item.SessionCode} {...item} />
           ))}
         </div>
       </ataglance>

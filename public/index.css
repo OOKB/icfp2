@@ -60,7 +60,7 @@ h1, h2, h3, h4, h5, h6 {
 postertitle,
 title,
 day,
-sessioncode,
+SessionCode,
 sessionname,
 sessiontime,
 sessionroom,
@@ -170,7 +170,7 @@ poster-session sessionroom {
   page-break-inside:avoid;
 }
 
-sessioncode,
+SessionCode,
 sessionname,
 sessionroom,
 moderator,
@@ -182,7 +182,7 @@ author {
 }
 
 /** id and title **/
-.posterID, sessionCode {
+.posterID, SessionCode {
   margin: 0 0 0 -4rem;
   font-weight: 100;
   float: left;
@@ -316,7 +316,7 @@ presentation::after {
 /** At A Glance Additions */
 ataglance { display: block; }
 
-ataglance sessioncode { float: none; margin: 0; padding: 0;}
+ataglance SessionCode { float: none; margin: 0; padding: 0;}
 
 ataglance .sessions-list,
 ataglance .presentation {
