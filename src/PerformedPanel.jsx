@@ -14,7 +14,7 @@ function PerformedPanel(props) {
 
   let DescriptionEl = false
   if (sessionDescription) {
-    DescriptionEl = <description dangerouslySetInnerHTML={{ __html: sessionDescription }} />
+    DescriptionEl = <div className="description" dangerouslySetInnerHTML={{ __html: sessionDescription }} />
   }
 
   return (
