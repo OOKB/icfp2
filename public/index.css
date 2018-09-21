@@ -60,7 +60,6 @@ h1, h2, h3, h4, h5, h6 {
 .postertitle,
 .title,
 .day,
-.sessioncode,
 .sessionname,
 .sessiontime,
 .sessionroom,
@@ -180,10 +179,11 @@ poster-session .columns {
 }
 
 /** id and title **/
-.posterID, .sessioncode {
-  margin: 0 0 0 -4rem;
+.posterID,
+.sessioncode {
   font-weight: 100;
-  float: left;
+  position: absolute;
+  left:0;
 }
 
 /** Presentation/Panel settings **/
@@ -356,14 +356,13 @@ strong {
   background-size: contain;
 }
 
-.trackname::before {
+.whatTrack {
   height: 2em;
   width: 2em;
-  background-color: red;
   border-radius: 1em;
   position: absolute;
   left: 0;
-}
-
-.whatTrack {
+  text-indent: 200%;
+  overflow: hidden;
+  white-space:nowrap;
 }
