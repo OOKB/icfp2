@@ -21,10 +21,10 @@ class PerformedPanel extends Component {
     return (
       <div className="presentation">
         <div className="sessioncode">{ sessionCode }</div>
-        <TrackColorDot sessionId={sessionId} />
-        { trackName ? <div className="trackname">{ trackName }</div> : false }
         <div className="sessionname">{ sessionName }</div>
         <span className="session-type">{ sessionType }</span>
+        <TrackColorDot sessionId={sessionId} />
+        { trackName ? <div className="trackname">{ trackName }</div> : false }
         {/* <starttime>{ timeStr }</starttime> */}
         <div className="sessionroom">{ sessionRoom }</div>
 

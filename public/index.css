@@ -172,7 +172,7 @@ poster-session .columns {
 .sessionroom,
 .moderator,
 .postertitle,
-.author
+.author {
   page-break-before: auto;
   page-break-after: auto;
   page-break-inside: avoid;
@@ -318,7 +318,6 @@ poster-session .columns {
 /** At A Glance Additions */
 .ataglance { display: block; }
 
-ataglance sessioncode { float: none; margin: 0; padding: 0;}
 .ataglance .sessioncode { float: none; margin: 0; padding: 0;}
 
 .ataglance .sessions-list,
@@ -354,14 +353,18 @@ strong {
   width: 2em;
   background: url(francophone.svg) no-repeat center center;
   background-size: contain;
+  position: absolute;
+  left: -2.125em;
+  margin-top: -.5em;
 }
 
 .whatTrack {
-  height: 2em;
-  width: 2em;
+  height: 1.5em;
+  width: 3.5em;
   border-radius: 1em;
   position: absolute;
   left: 0;
+  margin-top: -.175em;
   text-indent: 200%;
   overflow: hidden;
   white-space:nowrap;
