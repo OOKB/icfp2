@@ -8,7 +8,7 @@ class PerformedPanel extends Component {
   render() {
     const {
       sessionCode, sessionName, sessionRoom, sessionStartTime, sessionEndTime,
-      sessionDescription, sessionChairs, presentations, sessionType,
+      sessionDescription, sessionChairs, presentations, sessionType, trackName,
     } = this.props
     // const timeStr = `${sessionStartTime} - ${sessionEndTime}`;
 
@@ -21,6 +21,7 @@ class PerformedPanel extends Component {
       <presentation>
         <sessioncode>{ sessionCode }</sessioncode>
         <sessionname>{ sessionName }</sessionname>
+        { trackName ? <trackname>{ trackName }</trackname> : false }
         <span className="session-type">{ sessionType }</span>
         {/* <starttime>{ timeStr }</starttime> */}
         <sessionroom>{ sessionRoom }</sessionroom>
@@ -44,6 +45,7 @@ PerformedPanel.propTypes = {
   sessionName: PropTypes.string.isRequired,
   sessionRoom: PropTypes.string.isRequired,
   sessionStartTime: PropTypes.string.isRequired,
+  trackName: PropTypes.string.isRequired,
 }
 export default PerformedPanel
 

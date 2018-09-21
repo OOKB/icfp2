@@ -74,7 +74,8 @@ authors,
 description,
 sessionDescription,
 moderator,
-sessionmoderator {
+sessionmoderator,
+trackname {
   display: block;
   position: relative;
 }
@@ -352,11 +353,14 @@ strong {
   background-size: contain;
 }
 
-.whatTrack {
+trackname::before {
   height: 2em;
   width: 2em;
   background-color: red;
   border-radius: 1em;
   position: absolute;
   left: 0;
+}
+
+.whatTrack {
 }
