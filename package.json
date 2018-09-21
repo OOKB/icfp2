@@ -22,6 +22,7 @@
   },
   "scripts": {
     "save": "babel-node --presets=react,env src/save",
+    "data-fix": "node -r esm fix.js",
     "data": "node index",
     "start": "react-scripts start",
     "build": "react-scripts build",
