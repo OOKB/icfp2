@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import Author from './Author'
 
 function Presentation({
-  authors, description, title, panelPresentations, id
+  authors, description, title, panelPresentations, id,
 }) {
   const onlyFrench = description && description.willAbstractPresentedFrench
   // const [presenter, ...otherAuthors] = authors;
@@ -25,17 +25,20 @@ function Presentation({
       { title ? <div className="postertitle">{title}</div> : false }
       { PanelPresentationsEl }
       <div className="authors">
-        { authors.map(item => <Author key={item.contactID} {...item} />) }
+        { authors.map(item => <Author key={item.id} {...item} />) }
       </div>
     </div>
   )
 }
-
+Presentation.defaultProps = {
+  title: null,
+  panelPresentations: null,
+}
 Presentation.propTypes = {
-  authors: PropTypes.array.isRequired,
-  description: PropTypes.object.isRequired,
-  title: PropTypes.object.isRequired,
-  panelPresentations: PropTypes.array,
-  id: PropTypes.string,
+  authors: PropTypes.arrayOf(PropTypes.object).isRequired,
+  description: PropTypes.shape({ willAbstractPresentedFrench: PropTypes.bool }).isRequired,
+  title: PropTypes.string,
+  panelPresentations: PropTypes.arrayOf(PropTypes.object),
+  id: PropTypes.number.isRequired,
 }
 export default Presentation

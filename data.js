@@ -20,8 +20,9 @@ function doTitleize(str) {
 }
 
 function addAuthor(sessionCode) {
-  return ({ firstname, lastname, presenter }) => {
-    const id = titleId(`${firstname} ${lastname}`)
+  return ({
+    id, firstname, lastname, presenter,
+  }) => {
     const sessCode = presenter ? `<strong>${sessionCode}</strong>` : sessionCode
     if (authorIndex[id]) {
       authorIndex[id].sessionCodes.push(sessCode)
@@ -36,11 +37,13 @@ function addAuthor(sessionCode) {
 function fixAuthor({
   firstname, lastname, company, presenter,
 }) {
+  const id = titleId(`${firstname} ${lastname}`)
   let companyStr = company
   if (company && company.toString().split(' ').length > 1) {
     companyStr = doTitleize(company)
   }
   const auth = {
+    id,
     company: companyStr,
     firstname: doTitleize(firstname),
     lastname: doTitleize(lastname),
@@ -128,7 +131,7 @@ function fixDescription(sessionDescription) {
 }
 
 function fixDataItem({
-  presentations, sessionCode, sessionDescription, sessionChairs,
+  presentations, sessionDescription, sessionChairs,
   sessionDate, sessionId, sessionType, ...rest
 }) {
   const newItem = {
@@ -139,7 +142,7 @@ function fixDataItem({
     trackId: titleId(rest.trackName),
     ...rest,
   }
-  if (!sessionCode) {
+  if (!newItem.sessionCode) {
     newItem.sessionCode = `[${sessionId.toString()}]`
     newItem.sessionCodeErr = true
   }
@@ -148,7 +151,7 @@ function fixDataItem({
   )
   // Add authors to index.
   if (newItem.sessionChairs.length) {
-    _.each(newItem.sessionChairs, addAuthor(`<em>${newItem.sessionCode}</em>`))
+    _.each(newItem.sessionChairs, addAuthor(newItem.sessionCode))
   }
 
   return newItem
