@@ -104,8 +104,6 @@ function fixPresentation({
     presentation.panelPresentations = fixPanelDescription(presentation.description)
     presentation.description = {}
     _.each(presentation.authors, addAuthor(sessionCode))
-  } else {
-    cli.error(sessionType)
   }
   // if (description && description.Title) {
   //   presentation.description = {title: doTitleize(description.Title)};
@@ -128,12 +126,14 @@ function fixDescription(sessionDescription) {
 }
 
 function fixDataItem({
-  presentations, sessionDescription, sessionChairs, ...rest
+  presentations, sessionDescription, sessionChairs, sessionDate, sessionType, ...rest
 }) {
   const newItem = {
     presentations: presentations.map((presentation, i) => fixPresentation(presentation, i, rest)),
     sessionChairs: sessionChairs.map(fixAuthor),
+    sessionDate: sessionDate || 'none',
     sessionDescription: fixDescription(sessionDescription),
+    sessionType: sessionType || 'Opening',
     trackId: titleId(rest.trackName),
     ...rest,
   }
@@ -144,28 +144,13 @@ function fixDataItem({
 
   return newItem
 }
-
-export default function fixData(data) {
-  let apiData = null
-  cli.log('fetch new data')
-  cli.log('transform new data')
-  const items = _.map(humps(data), fixDataItem)
-  apiData = {
-    posters: _.remove(items, { sessionType: 'Poster' }),
-    opening: _.remove(items, { sessionType: '' }),
-    workshop: _.remove(items, { sessionType: 'Workshop' }),
-    sessions: items,
-    trackIds: _.uniq(_.map(items, 'trackId')),
-    // sessions: _.filter(items, (item) => {
-    // return (item.sessionType === 'Oral Presentations' || item.sessionType === 'Preformed Panel')
-    // })
-  }
-  apiData.sessions = _.groupBy(apiData.sessions, 'sessionDate')
+function addGrouping(items) {
+  const dateGroups = _.groupBy(items, 'sessionDate')
   const days = []
-  _.each(_.keys(apiData.sessions), (sessionDate) => {
+  _.each(_.keys(dateGroups), (sessionDate) => {
     days.push({
       sessionDate,
-      timeSlots: _.map(_.groupBy(apiData.sessions[sessionDate], 'sessionStartTime'), sessions => ({
+      timeSlots: _.map(_.groupBy(dateGroups[sessionDate], 'sessionStartTime'), sessions => ({
         sessionStartTime: sessions[0].sessionStartTime,
         sessionEndTime: sessions[0].sessionEndTime,
         sessions: _.map(sessions, (session) => {
@@ -179,7 +164,27 @@ export default function fixData(data) {
       })),
     })
   })
-  apiData.sessions = days
+  return days
+}
+export default function fixData(data) {
+  let apiData = null
+  cli.log('fetch new data')
+  cli.log('transform new data')
+  const items = _.map(humps(data), fixDataItem)
+  const {
+    Poster, Workshop, Opening, ...sessions
+  } = _.groupBy(items, 'sessionType')
+  apiData = {
+    trackIds: _.uniq(_.map(items, 'trackId')),
+    sessionIds: _.keys(sessions),
+    posters: addGrouping(Poster),
+    opening: addGrouping(Opening),
+    workshop: addGrouping(Workshop),
+    sessions: addGrouping(_.concat(_.values(sessions))),
+    // sessions: _.filter(items, (item) => {
+    // return (item.sessionType === 'Oral Presentations' || item.sessionType === 'Preformed Panel')
+    // })
+  }
   apiData.authors = _.sortBy(_.values(authorIndex), ['lastname', 'firstname'])
   cli.log('return new data')
   return { apiData, data }
