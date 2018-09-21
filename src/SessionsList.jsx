@@ -2,7 +2,7 @@ import React from 'react'
 
 function SessionsList(props) {
   const {
-    sessionCode, sessionName, sessionRoom, sessionStartTime, sessionEndTime,
+    sessionCode, sessionName, sessionRoom,
   } = props
   // const timeStr = `${sessionStartTime} - ${sessionEndTime}`
   const separator = '\u0009'
