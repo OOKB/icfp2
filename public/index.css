@@ -377,7 +377,8 @@ strong {
 }
 
 .poster .francophone {
-  left: -1.125em;
+  left: 0;
+  top: 2.25em;
   margin-top: 0;
 }
 
