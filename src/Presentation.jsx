@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import Author from './Author'
 
 function Presentation({
-  authors, description, title, panelPresentations,
+  authors, description, title, panelPresentations, id
 }) {
   const onlyFrench = description && description.willAbstractPresentedFrench
   // const [presenter, ...otherAuthors] = authors;
@@ -20,7 +20,7 @@ function Presentation({
   }
   return (
     <div className="poster">
-      {/* { id ? <div className="sessioncode">{id}</div> : false } */}
+      { id ? <div className="sessioncode">{id}</div> : false }
       { onlyFrench && <div className="francophone" /> }
       { title ? <div className="postertitle">{title}</div> : false }
       { PanelPresentationsEl }

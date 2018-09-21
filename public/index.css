@@ -376,6 +376,11 @@ strong {
   margin-top: -.5em;
 }
 
+.poster .francophone {
+  left: -1.125em;
+  margin-top: 0;
+}
+
 .whatTrack {
   height: 1.5em;
   width: 3.5em;
