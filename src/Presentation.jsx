@@ -4,9 +4,9 @@ import PropTypes from 'prop-types'
 import Author from './Author'
 
 function Presentation({
-  authors, description, title, panelPresentations, id,
+  authors, description, title, panelPresentations,
 }) {
-  const onlyFrench = description && description.willThisAbstractBePresentedOnlyInFrench
+  const onlyFrench = description && description.willAbstractPresentedFrench
   // const [presenter, ...otherAuthors] = authors;
   // presenter prints out first, presenter with value "1" in the json indicateds presenter
   let PanelPresentationsEl = false
