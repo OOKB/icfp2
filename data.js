@@ -1,59 +1,41 @@
 import cli from 'better-console'
 import _ from 'lodash'
+import _fp from 'lodash/fp'
 import humps from 'lodash-humps'
-import { titleize } from 'inflection'
 import sanitizeHtml from 'sanitize-html'
-import titleId from './src/titleId'
+import {
+  addAuthorEvent, doTitleize, fixAuthor, titleId,
+} from './src/utils'
 
-const authorIndex = {}
+const oneOf = _fp.includes.convert({ rearg: false })
 
-function doTitleize(str) {
-  // If the string is empty or false return it.
-  if (!str) return str
-  // Cast every value to a string type.
-  const result = str.toString()
-  // Titleize if all lower or all upper.
-  if (result === result.toUpperCase() || result === result.toLowerCase()) {
-    return titleize(result)
-  }
-  return result
+const getEventCode = _.cond([
+  [
+    _fp.conforms({ sessionType: oneOf(['Poster', 'Poster presentations']) }),
+    _fp.flow(_fp.get('sessionName'), _fp.replace(' Session ', '.'), str => str.concat('.')),
+  ],
+  [
+    _fp.stubTrue,
+    _fp.get('sessionCode'),
+  ],
+])
+
+function addAuthors(authorIndex, item) {
+  const eventCode = getEventCode(item)
+  return _fp.reduce(
+    (result, { authors, id }) => addAuthorEvent(result, eventCode, id)(authors),
+    addAuthorEvent(authorIndex, eventCode, false)(item.sessionChairs),
+    item.presentations,
+  )
 }
 
-function addAuthor(sessionCode) {
-  return ({
-    id, firstname, lastname, presenter,
-  }) => {
-    const sessCode = presenter ? `<strong>${sessionCode}</strong>` : sessionCode
-    if (authorIndex[id]) {
-      authorIndex[id].sessionCodes.push(sessCode)
-    } else {
-      authorIndex[id] = {
-        firstname, lastname, sessionCodes: [sessCode], id,
-      }
-    }
-  }
+
+export function getAuthId(firstname, lastname, company) {
+  const coStr = company ? ` ${company.toString().substr(0, 3)}` : ''
+  return titleId(`${firstname} ${lastname}${coStr}`)
 }
 
-function fixAuthor({
-  firstname, lastname, company, presenter,
-}) {
-  const id = titleId(`${firstname} ${lastname}`)
-  let companyStr = company
-  if (company && company.toString().split(' ').length > 1) {
-    companyStr = doTitleize(company)
-  }
-  const auth = {
-    id,
-    company: companyStr,
-    firstname: doTitleize(firstname),
-    lastname: doTitleize(lastname),
-    presenter,
-    // ...rest
-  }
-  return auth
-}
-
-function fixPanelDescription(description) {
+export function fixPanelDescription(description) {
   const panelPresentationIndex = {}
   function addPanelIndex(matches, fieldId, value) {
     if (matches) {
@@ -70,12 +52,12 @@ function fixPanelDescription(description) {
     const isPresenter = key.match(/^presenterOfPresentation([1-9][0-9]?)/)
     addPanelIndex(isPresenter, 'presenter', value)
   })
-  return _.values(panelPresentationIndex)
+  return _fp.values(panelPresentationIndex)
 }
 
 function fixPresentation({
   orderof, description, authors = [], ...rest
-}, i, { sessionType, sessionCode }) {
+}, i, { sessionType }) {
   const presentation = { ...rest, description: {} }
   presentation.authors = authors.map(auth => fixAuthor({
     ...auth,
@@ -92,28 +74,9 @@ function fixPresentation({
   if (presentation.description.title) {
     presentation.description.title = doTitleize(presentation.description.title)
   }
-
-  // Poster authors.
-  if (sessionType === 'Poster presentations' || sessionType === 'Poster') {
-    const idParts = presentation.id.toString().split('.')
-    presentation.id = `${idParts[0]}.${_.padEnd(idParts[1], 2, '0')}`
-    delete presentation.id
-    _.each(presentation.authors, addAuthor(`Poster ${presentation.id}`))
-    presentation.description = _.pick(presentation.description, 'title')
-  } else if (sessionType === 'Oral' || sessionType === 'IBP Interactive session') {
-    _.each(presentation.authors, addAuthor(sessionCode))
-    presentation.description = _.pick(presentation.description, 'title')
-  } else if (sessionType === 'Flash (Speed round)' || sessionType === 'Workshop') {
-    _.each(presentation.authors, addAuthor(sessionCode))
-  } else if (sessionType === 'Preformed Panel') {
-    presentation.panelPresentations = fixPanelDescription(presentation.description)
-    presentation.description = {}
-    _.each(presentation.authors, addAuthor(sessionCode))
+  if (presentation.title) {
+    presentation.title = doTitleize(presentation.title)
   }
-  // if (description && description.Title) {
-  //   presentation.description = {title: doTitleize(description.Title)};
-  // }
-
   if (presentation.authors.length > 1 && presentation.authors[0].presenter !== 1) {
     const presenter = _.remove(presentation.authors, { presenter: 1 })
     presentation.authors = presenter.concat(presentation.authors)
@@ -139,7 +102,7 @@ function fixDataItem({
     sessionDate: sessionDate || 'none',
     sessionDescription: fixDescription(sessionDescription),
     sessionType: sessionType || 'Opening',
-    trackId: titleId(rest.trackName),
+    trackId: titleId(rest.trackName || sessionType),
     ...rest,
   }
   if (!newItem.sessionCode) {
@@ -149,13 +112,9 @@ function fixDataItem({
   newItem.presentations = presentations.map(
     (presentation, i) => fixPresentation(presentation, i, rest),
   )
-  // Add authors to index.
-  if (newItem.sessionChairs.length) {
-    _.each(newItem.sessionChairs, addAuthor(newItem.sessionCode))
-  }
-
   return newItem
 }
+
 function addGrouping(items) {
   const dateGroups = _.groupBy(items, 'sessionDate')
   const days = []
@@ -182,7 +141,9 @@ export default function fixData(data) {
   let apiData = null
   cli.log('fetch new data')
   cli.log('transform new data')
-  const items = _.map(humps(data), fixDataItem)
+  const items = _fp.flow(humps, _fp.map(fixDataItem))(data)
+  const authorIndex = _fp.reduce(addAuthors, {}, items)
+
   const {
     Poster, Workshop, Opening, ...sessions
   } = _.groupBy(items, 'sessionType')
