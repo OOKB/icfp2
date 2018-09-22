@@ -39,13 +39,13 @@ function getCo(company) {
 
 export function fixAuthor(item) {
   const {
-    contactId, firstname, lastname, company, presenter, ...rest
+    contactId, email, firstname, lastname, company, presenter, ...rest
   } = item
   const author = _.pick(['nameSuffix', 'namePrefix'], rest)
   author.id = `a${contactId}`
   author.company = getCo(company)
   author.firstname = doTitleize(firstname)
-  author.lastname = doTitleize(lastname)
+  author.lastname = doTitleize(lastname) || email.split('@')[0]
   author.isPresenter = !!presenter
   return author
 }
