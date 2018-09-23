@@ -34,7 +34,7 @@ export const titleId = _.flow(
 )
 function getCo(company) {
   if (company && company.toString().split(' ').length > 1) return doTitleize(company)
-  return company
+  return company.toString()
 }
 
 export function fixAuthor(item) {
