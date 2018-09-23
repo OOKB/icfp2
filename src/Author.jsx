@@ -19,7 +19,12 @@ function eventStyle({ isPresenter, isChair }) {
   return {}
 }
 function Event({ eventCode, ...rest }) {
-  return <span style={eventStyle(rest)}>{eventCode}</span>
+  return (
+    <span style={eventStyle(rest)}>
+      {eventCode}
+      {', '}
+    </span>
+  )
 }
 Event.propTypes = {
   eventCode: PropTypes.string.isRequired,
