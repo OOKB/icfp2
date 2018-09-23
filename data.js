@@ -147,12 +147,15 @@ export default function fixData(data) {
   const {
     Poster, Workshop, Opening, ...sessions
   } = _.groupBy(items, 'sessionType')
+  const sideEvents = addGrouping(sessions['Side Events'])
+  delete sessions['Side Events']
   apiData = {
     trackIds: _.uniq(_.map(items, 'trackId')),
     sessionIds: _.keys(sessions),
     posters: Poster,
     opening: addGrouping(Opening),
     workshop: addGrouping(Workshop),
+    sideEvents,
     sessions: addGrouping(_.flatten(_.values(sessions))),
     // sessions: _.filter(items, (item) => {
     // return (item.sessionType === 'Oral Presentations' || item.sessionType === 'Preformed Panel')

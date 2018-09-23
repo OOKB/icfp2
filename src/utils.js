@@ -46,6 +46,7 @@ export function fixAuthor(item) {
   author.company = getCo(company)
   author.firstname = doTitleize(firstname)
   author.lastname = doTitleize(lastname) || email.split('@')[0]
+  // author.lastSort = // remove
   author.isPresenter = !!presenter
   return author
 }
