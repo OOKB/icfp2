@@ -9,7 +9,9 @@ function getClassName(tagName, presenter) {
 function getAuthorName({
   events, firstname, lastname, nameSuffix, namePrefix,
 }) {
+  // THE AUTHOR INDEX PAGES.
   if (events) return `${lastname} ${nameSuffix}, ${namePrefix} ${firstname}; `
+  // EVERYWHERE ELSE.
   return [namePrefix, firstname, lastname, nameSuffix].join(' ')
 }
 
