@@ -9,7 +9,7 @@ function getClassName(tagName, presenter) {
 function getAuthorName({
   events, firstname, lastname, nameSuffix, namePrefix,
 }) {
-  if (events) return `${lastname} ${nameSuffix}, ${namePrefix} ${firstname};`
+  if (events) return `${lastname} ${nameSuffix}, ${namePrefix} ${firstname}; `
   return [namePrefix, firstname, lastname, nameSuffix].join(' ')
 }
 
