@@ -1,3 +1,4 @@
+import { compact } from 'lodash/fp'
 import React from 'react'
 import PropTypes from 'prop-types'
 
@@ -10,9 +11,13 @@ function getAuthorName({
   events, firstname, lastname, nameSuffix, namePrefix,
 }) {
   // THE AUTHOR INDEX PAGES.
-  if (events) return `${lastname} ${nameSuffix}, ${namePrefix} ${firstname}; `
+  if (events) {
+    const last = nameSuffix ? `${lastname} ${nameSuffix}, ` : `${lastname} `
+    const first = namePrefix ? `${namePrefix} ${firstname}; ` : `${firstname}; `
+    return last + first
+  }
   // EVERYWHERE ELSE.
-  return [namePrefix, firstname, lastname, nameSuffix].join(' ')
+  return compact([namePrefix, firstname, lastname, nameSuffix]).join(' ')
 }
 
 function eventStyle({ isPresenter, isChair }) {
