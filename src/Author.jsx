@@ -53,6 +53,8 @@ function Author({
 }
 Author.defaultProps = {
   company: null,
+  namePrefix: '',
+  nameSuffix: '',
 }
 Author.propTypes = {
   company: PropTypes.string,
