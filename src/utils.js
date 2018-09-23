@@ -1,5 +1,6 @@
 import _ from 'lodash/fp'
 import { titleize } from 'inflection'
+import { oneOf } from 'cape-lodash'
 
 export function doTitleize(str) {
   // If the string is empty or false return it.
@@ -36,7 +37,19 @@ function getCo(company) {
   if (company && company.toString().split(' ').length > 1) return doTitleize(company)
   return company.toString()
 }
-
+const getLastSort = _.flow(
+  _.split(' '),
+  _.dropWhile(name => _.lowerFirst(name) === name),
+  _.deburr,
+)
+// const lowerSomeLast = namePart => _.cond([
+//   [oneOf(['van', 'de', 'der', 'ter', 'een'])],
+// ])
+// const lastCap = _.flow(
+//   doTitleize,
+//   _.split(' '),
+//   _.map(lowerSomeLast),
+// )
 export function fixAuthor(item) {
   const {
     contactId, email, firstname, lastname, company, presenter, ...rest
@@ -44,9 +57,9 @@ export function fixAuthor(item) {
   const author = _.pick(['nameSuffix', 'namePrefix'], rest)
   author.id = `a${contactId}`
   author.company = getCo(company)
-  author.firstname = doTitleize(firstname)
-  author.lastname = doTitleize(lastname) || email.split('@')[0]
-  // author.lastSort = // remove
+  author.firstname = _.trim(doTitleize(firstname))
+  author.lastname = _.trim(lastname) || email.split('@')[0]
+  author.lastSort = getLastSort(author.lastname) || author.lastname
   author.isPresenter = !!presenter
   return author
 }

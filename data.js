@@ -2,12 +2,11 @@ import cli from 'better-console'
 import _ from 'lodash'
 import _fp from 'lodash/fp'
 import humps from 'lodash-humps'
+import { oneOf } from 'cape-lodash'
 import sanitizeHtml from 'sanitize-html'
 import {
   addAuthorEvent, doTitleize, fixAuthor, titleId,
 } from './src/utils'
-
-const oneOf = _fp.includes.convert({ rearg: false })
 
 const getEventCode = _.cond([
   [
@@ -161,7 +160,7 @@ export default function fixData(data) {
     // return (item.sessionType === 'Oral Presentations' || item.sessionType === 'Preformed Panel')
     // })
   }
-  apiData.authors = _.sortBy(_.values(authorIndex), ['lastname', 'firstname'])
+  apiData.authors = _.sortBy(_.values(authorIndex), ['lastSort', 'firstname'])
   cli.log('return new data')
   return { apiData, data }
 }

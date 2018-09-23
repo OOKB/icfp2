@@ -8,6 +8,7 @@
     "ajv": "^6.5.3",
     "axios": "^0.18.0",
     "better-console": "^1.0.1",
+    "cape-lodash": "^1.13.2",
     "cape-style": "^1.1.0",
     "esm": "^3.0.74",
     "fs-extra": "^7.0.0",
