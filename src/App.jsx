@@ -13,6 +13,7 @@ const pages = {
   '/posters': { items: json.posters, layout: 'posters', keyId: 'sessionCode' },
   '/authors': { items: json.authors, layout: 'authors', keyId: 'id' },
   '/overview': { items: json.sessions, layout: 'overview' },
+  '/sideshow': { items: json.sideEvents, layout: 'sessions', keyId: 'sessionCode' },
 }
 
 const App = ({ dispatch, pathname }) => {
