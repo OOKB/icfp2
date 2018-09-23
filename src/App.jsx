@@ -10,7 +10,7 @@ const pages = {
   '/opening': { items: json.opening, layout: 'sessions' },
   '/workshop': { items: json.workshop, layout: 'sessions' },
   '/sessions': { items: json.sessions, layout: 'sessions' },
-  '/posters': { items: json.posters, layout: 'posters', keyId: 'sessionId' },
+  '/posters': { items: json.posters, layout: 'posters', keyId: 'sessionCode' },
   '/authors': { items: json.authors, layout: 'authors', keyId: 'id' },
   '/overview': { items: json.sessions, layout: 'overview' },
 }
