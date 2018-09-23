@@ -1,4 +1,4 @@
-# icfp2
+# ICFP 2018
 
 ## Last name sorting
 
