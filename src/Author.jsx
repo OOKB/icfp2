@@ -12,7 +12,7 @@ function getAuthorName({
 }) {
   // THE AUTHOR INDEX PAGES.
   if (events) {
-    const last = nameSuffix ? `${lastname} ${nameSuffix}, ` : `${lastname} `
+    const last = nameSuffix ? `${lastname} ${nameSuffix}, ` : `${lastname}, `
     const first = namePrefix ? `${namePrefix} ${firstname}; ` : `${firstname}; `
     return last + first
   }
