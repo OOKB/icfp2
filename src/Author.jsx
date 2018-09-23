@@ -18,16 +18,21 @@ function eventStyle({ isPresenter, isChair }) {
   if (isChair) return { fontStyle: 'italic' }
   return {}
 }
-function Event({ eventCode, ...rest }) {
+function Event({ eventCode, initial, ...rest }) {
+  const separator = ', '
   return (
     <span style={eventStyle(rest)}>
       {eventCode}
-      {', '}
+      { initial && separator}
     </span>
   )
 }
 Event.propTypes = {
   eventCode: PropTypes.string.isRequired,
+  initial: PropTypes.bool.isRequired,
+}
+function isInit(index, items) {
+  return index < items.length - 1
 }
 function Author({
   company, id, isPresenter, events, tagName, ...other
@@ -38,7 +43,8 @@ function Author({
       <p className="person">
         <span className="fullname">{fullName}</span>
         { company && <span className="company">{ company }</span> }
-        { events && events.map(event => (<Event key={event.eventCode} {...event} />))}
+        { events && events.map((event, index) => (
+          <Event key={event.eventCode} initial={isInit(index, events)} {...event} />))}
       </p>
     </div>
   )
