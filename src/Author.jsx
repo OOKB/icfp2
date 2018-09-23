@@ -21,7 +21,7 @@ function getAuthorName({
 }
 
 function eventStyle({ isPresenter, isChair }) {
-  if (isPresenter) return { fontWeight: 'bold' }
+  if (isPresenter) return { fontWeight: '600' }
   if (isChair) return { fontStyle: 'italic' }
   return {}
 }

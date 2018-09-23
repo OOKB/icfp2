@@ -26,8 +26,17 @@ body {
   widows: 2;
 }
 
+/* For index */
+/* @page :first {
+  margin-top: 5.8465in;
+  margin-right: 0.625in;
+  margin-bottom: 1.2405in;
+  margin-left: 0.625in;
+}
+ */
 html {
-  font: 8pt/1.2 "Gentona Book", GentonaBook, "Gentona", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font: 8pt/1.3 "Gentona Book", GentonaBook, "Gentona", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 300;
   color: black;
   box-sizing: border-box;
 }
@@ -409,12 +418,18 @@ strong {
   -webkit-column-gap: 1.5rem; /* Chrome, Safari, Opera */
   -moz-column-gap: 1.5rem; /* Firefox */
   column-gap: 1.5rem;
+  font-size: 7pt;
+  line-height: 8.5pt;
 }
 
 #type-authors .author {
   display: block;
   text-indent: -2em;
   padding-left: 2em;
+}
+
+#type-authors .author * {
+  display: inline;
 }
 
 #type-authors .author::after,
