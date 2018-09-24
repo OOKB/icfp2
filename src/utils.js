@@ -1,6 +1,6 @@
 import _ from 'lodash/fp'
 import { titleize } from 'inflection'
-import { oneOf } from 'cape-lodash'
+import { condId } from 'cape-lodash'
 
 export function doTitleize(str) {
   // If the string is empty or false return it.
@@ -37,7 +37,7 @@ function getCo(company) {
   if (company && company.toString().split(' ').length > 1) return doTitleize(company)
   return company.toString()
 }
-const getLastSort = _.flow(
+export const getLastSort = _.flow(
   _.split(' '),
   _.dropWhile(name => _.lowerFirst(name) === name),
   _.deburr,
@@ -45,11 +45,16 @@ const getLastSort = _.flow(
 // const lowerSomeLast = namePart => _.cond([
 //   [oneOf(['van', 'de', 'der', 'ter', 'een'])],
 // ])
-// const lastCap = _.flow(
-//   doTitleize,
-//   _.split(' '),
-//   _.map(lowerSomeLast),
-// )
+const isAllCaps = str => _.toUpper(str) === str
+const singleLower = arr => arr.length === 1 && _.toLower(arr[0]) === arr[0]
+export const fixLast = _.flow(
+  _.trim,
+  _.split(' '),
+  _.map(condId([isAllCaps, _.flow(_.toLower, _.upperFirst)])),
+  condId([singleLower, arr => ([_.upperFirst(arr[0])])]),
+  _.join(' '),
+)
+
 export function fixAuthor(item) {
   const {
     contactId, email, firstname, lastname, company, presenter, ...rest
@@ -58,7 +63,7 @@ export function fixAuthor(item) {
   author.id = `a${contactId}`
   author.company = getCo(company)
   author.firstname = _.trim(doTitleize(firstname))
-  author.lastname = _.trim(lastname) || email.split('@')[0]
+  author.lastname = fixLast(lastname || email.split('@')[0])
   author.lastSort = getLastSort(author.lastname) || author.lastname
   author.isPresenter = !!presenter
   return author
