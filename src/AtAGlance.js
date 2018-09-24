@@ -9,7 +9,6 @@ class AtAGlance extends Component {
 
     return (
       <div className="ataglance">
-        <h3 className="breaker">For the At-A-Glance sections</h3>
         <h3>{timeStr}</h3>
 
         <div className="sessions-list">
