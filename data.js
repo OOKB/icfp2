@@ -28,7 +28,6 @@ function addAuthors(authorIndex, item) {
   )
 }
 
-
 export function getAuthId(firstname, lastname, company) {
   const coStr = company ? ` ${company.toString().substr(0, 3)}` : ''
   return titleId(`${firstname} ${lastname}${coStr}`)
@@ -136,6 +135,12 @@ function addGrouping(items) {
   })
   return days
 }
+const getSessions = _fp.flow(
+  _fp.values,
+  _fp.flatten,
+  _fp.reject({ sessionStartTime: ' ', sessionEndTime: ' ' }),
+  addGrouping,
+)
 export default function fixData(data) {
   let apiData = null
   cli.log('fetch new data')
@@ -161,7 +166,8 @@ export default function fixData(data) {
     // })
   }
   delete sessions.Plenary
-  apiData.sessions = addGrouping(_.flatten(_.values(sessions)))
+
+  apiData.sessions = getSessions(sessions)
   apiData.authors = _.sortBy(_.values(authorIndex), ['lastSort', 'firstname'])
   cli.log('return new data')
   return { apiData, data }
