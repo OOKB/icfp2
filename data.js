@@ -155,11 +155,13 @@ export default function fixData(data) {
     opening: addGrouping(Opening),
     workshop: addGrouping(Workshop),
     sideEvents,
-    sessions: addGrouping(_.flatten(_.values(sessions))),
+    overview: addGrouping(_.flatten(_.values(sessions))),
     // sessions: _.filter(items, (item) => {
     // return (item.sessionType === 'Oral Presentations' || item.sessionType === 'Preformed Panel')
     // })
   }
+  delete sessions.Plenary
+  apiData.sessions = addGrouping(_.flatten(_.values(sessions)))
   apiData.authors = _.sortBy(_.values(authorIndex), ['lastSort', 'firstname'])
   cli.log('return new data')
   return { apiData, data }
