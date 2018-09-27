@@ -400,8 +400,8 @@ strong {
 .francophone {
   height: 1.5em;
   width: 1.5em;
-  background: url(francophone-solid.svg) no-repeat center center;
-  /* background: url(francophone.svg) no-repeat center center; */
+  /* background: url(francophone-solid.svg) no-repeat center center; */
+  background: url(francophone.svg) no-repeat center center;
   background-size: contain;
   position: absolute;
 }
