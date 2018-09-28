@@ -75,9 +75,10 @@ function fixPresentation({
   if (presentation.title) {
     presentation.title = doTitleize(presentation.title)
   }
-  if (presentation.authors.length > 1 && presentation.authors[0].presenter !== 1) {
-    const presenter = _.remove(presentation.authors, { presenter: 1 })
-    presentation.authors = presenter.concat(presentation.authors)
+  if (presentation.authors.length > 1) {
+    presentation.authors = _fp.orderBy(
+      ['isPresenter', 'lastName', 'firstName'], ['desc', 'asc', 'asc'], presentation.authors,
+    )
   }
   return presentation
 }
