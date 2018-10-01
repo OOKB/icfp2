@@ -9,7 +9,6 @@ class Presentation extends Component {
       <div className="day">
 
         <h2>{sessionDate}</h2>
-        <p>At-a-glance</p>
         {
           timeSlots.map((item) => {
             const key = item.sessionStartTime + item.sessionEndTime
