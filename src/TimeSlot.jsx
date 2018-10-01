@@ -1,17 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { format, parse } from 'date-fns'
-
+import { startEnd } from './clientUtils'
 import PerformedPanel from './PerformedPanel'
 // import OralPresentations from './OralPresentations';
 
-const hourMin = time => format(parse(time), 'HH:mm')
 
 function Timeslot({ sessionStartTime, sessionEndTime, sessions }) {
-  const timeStr = `${hourMin(sessionStartTime)} - ${hourMin(sessionEndTime)}`
   return (
     <div className="timeslot">
-      <h3>{timeStr}</h3>
+      <h3>{startEnd(sessionStartTime, sessionEndTime)}</h3>
       <div className="columns">
         { sessions.map(item => (
           <PerformedPanel key={item.sessionCode} {...item} />

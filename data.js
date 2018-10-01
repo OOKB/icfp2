@@ -161,7 +161,7 @@ export default function fixData(data) {
     opening: addGrouping(Opening),
     workshop: addGrouping(Workshop),
     sideEvents,
-    overview: addGrouping(_.flatten(_.values(sessions))),
+    overview: addGrouping(items),
     // sessions: _.filter(items, (item) => {
     // return (item.sessionType === 'Oral Presentations' || item.sessionType === 'Preformed Panel')
     // })
