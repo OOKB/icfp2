@@ -374,23 +374,13 @@ strong {
   font-weight: 900;
 }
 
-/* francophonieFlag */
-/* .francophone {
-  height: 1.25em;
-  width: 1.25em;
-  background: url(francophonieFlag.svg) no-repeat center center;
-  background-size: contain;
-  position: absolute;
-  left: -1.75em;
-  margin-top: -.125em;
-} */
-
 /* francophone chat bubble */
 .francophone {
   height: 1.5em;
   width: 1.5em;
   /* background: url(francophone-solid.svg) no-repeat center center; */
-  background: url(francophone.svg) no-repeat center center;
+  /* background: url(francophone.svg) no-repeat center center; */
+  background: url(francophone-circle.svg) no-repeat center center;
   background-size: contain;
   position: absolute;
 }
