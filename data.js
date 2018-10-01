@@ -136,17 +136,20 @@ function addGrouping(items) {
   })
   return days
 }
+
+const rmNoTime = _fp.reject({ sessionStartTime: ' ', sessionEndTime: ' ' })
+const getItems = _fp.flow(humps, rmNoTime, _fp.map(fixDataItem))
 const getSessions = _fp.flow(
   _fp.values,
   _fp.flatten,
-  _fp.reject({ sessionStartTime: ' ', sessionEndTime: ' ' }),
   addGrouping,
 )
+
 export default function fixData(data) {
   let apiData = null
   cli.log('fetch new data')
   cli.log('transform new data')
-  const items = _fp.flow(humps, _fp.map(fixDataItem))(data)
+  const items = getItems(data)
   const authorIndex = _fp.reduce(addAuthors, {}, items)
 
   const {
