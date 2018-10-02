@@ -9,6 +9,7 @@ body {
   padding: 0;
   width: 100%;
   height: 100%;
+  color: black;
 }
 
 /* ±±±±±±±±±±±±±±±±±±±±±±±±±±±±± */
@@ -29,12 +30,10 @@ body {
 html {
   font: 8pt/1.25 "Gentona Book", GentonaBook, "Gentona", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 300;
-  color: black;
   box-sizing: border-box;
 }
 
 body {
-  color: black;
   font-size: 1rem;
 }
 
@@ -49,7 +48,12 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "Gentona Book", GentonaBook, "Gentona", "Helvetica Neue", Helvetica, Arial, sans-serif;
   margin: 0;
   page-break-after: avoid;
-  font-weight: bold;
+  font-weight: 700;
+}
+
+.author strong,
+strong {
+  font-weight: 700;
 }
 
 .list-reset {
@@ -110,26 +114,8 @@ h2,h3,h4,h5,h6,
   font-weight: 400;
 }
 
-/** style main poster session times **/
-.poster-session,
-.day,
-.timeslot {
-  margin-bottom:1.0833in;
-  page-break-before: always;
-}
-
 h2 + .timeslot {
   margin-top: 0;
-}
-
-.columns {
-  margin-top: 1.2rem;
-  -webkit-column-count: 2; /* Chrome, Safari, Opera */
-  -moz-column-count: 2; /* Firefox */
-  column-count: 2;
-  -webkit-column-gap: 1.25em; /* Chrome, Safari, Opera */
-  -moz-column-gap: 1.25em; /* Firefox */
-  column-gap: 1.25em;
 }
 
 .time,
@@ -154,13 +140,64 @@ h2 + .timeslot {
   margin-bottom: 4rem;
 }
 
-/** main poster block settings **/
+/** some layout related stuff; 2 columns on everything! */
+.columns {
+  margin-top: 1.2rem;
+  -webkit-column-count: 2; /* Chrome, Safari, Opera */
+  -moz-column-count: 2; /* Firefox */
+  column-count: 2;
+  -webkit-column-gap: 1.25em; /* Chrome, Safari, Opera */
+  -moz-column-gap: 1.25em; /* Firefox */
+  column-gap: 1.25em;
+}
+
+/* print page breaks and such? */
+/* control print breaks on main dates/times, etc. */
+.poster-session,
+.day,
+.timeslot {
+  page-break-before: always;
+}
+
+.poster,
+.presentation,
+.panel {
+  page-break-after: avoid;
+}
+
+.poster,
+.poster > *,
+header.tryNottoBreak,
+.sessioncode,
+.sessionname,
+.sessionroom,
+.moderator,
+.postertitle,
+.author,
+.whatTrack {
+  page-break-before: avoid;
+  page-break-after: avoid;
+  page-break-inside: avoid;
+}
+
+#type-posters .poster-session h3 {
+  page-break-after: always;
+}
+
+
+/* how is this so long of a CSS file... how can I shorten/lessen all this? */
+/** Margins and spacing **/
+.poster-session,
+.day,
+.timeslot {
+  margin-bottom: 1.0833in; /* why this? */
+}
+
 .poster,
 .presentation,
 .panel {
   font-size: 1rem;
   padding-left: 4rem;
-  page-break-after: avoid;
 }
 
 .poster,
@@ -178,21 +215,6 @@ h2 + .timeslot {
 .tryNottoBreak {
   margin-left: -4em;
   padding-left: 4em;
-}
-
-.poster,
-.poster > *,
-header.tryNottoBreak,
-.sessioncode,
-.sessionname,
-.sessionroom,
-.moderator,
-.postertitle,
-.author,
-.whatTrack {
-  page-break-before: avoid;
-  page-break-after: avoid;
-  page-break-inside: avoid;
 }
 
 /** id and title **/
@@ -251,19 +273,27 @@ header.tryNottoBreak,
 .poster .presenter::before {
   content: 'Presenter: ';
   font-size: .85rem;
-  font-weight: bold;
+  font-weight: 700;
   text-transform: uppercase;
   font-style: normal;
 }
 
 .author,
-.moderator {
+.moderator,
+.author::after,
+.moderator::after,
+.person,
+.fullname,
+.company,
+#type-authors .author * {
   display: inline;
 }
 
 .authors,
 .author,
-.moderator {
+.moderator,
+.author::after,
+.moderator::after {
   font-weight: 300;
   word-wrap: normal;
 }
@@ -271,15 +301,17 @@ header.tryNottoBreak,
 .author::after,
 .moderator::after {
   content: "; ";
-  display: inline;
   margin-right: .225em;
-  word-wrap: normal;
 }
 
 .author:last-child::after,
 .author:last-of-type::after,
 .moderator:last-child::after,
-.moderator:last-of-type::after {
+.moderator:last-of-type::after,
+#type-authors .author::after,
+#type-authors .author:last-child::after,
+#type-authors .author:last-of-type::after,
+#type-authors  .author::before {
   content: "";
   display: none;
   margin-right: 0;
@@ -289,7 +321,7 @@ header.tryNottoBreak,
 .author::before {
   content: "Co-Author(s): ";
   font-size: .85rem;
-  font-weight: bold;
+  font-weight: 700;
   text-transform: uppercase;
   font-style: normal;
 }
@@ -309,15 +341,9 @@ header.tryNottoBreak,
 .moderator p:first-of-type::before,
 strong.smallcaps {
   font-size: .85rem;
-  font-weight: bold;
+  font-weight: 700;
   text-transform: uppercase;
   word-wrap: normal;
-}
-
-.person,
-.fullname,
-.company {
-  display: inline;
 }
 
 .company::before {
@@ -327,7 +353,7 @@ strong.smallcaps {
 /** presentation / abstract / panel additions **/
 .panel .sessionname,
 .presentation .sessionname {
-  font-weight: bold;
+  font-weight: 700;
 }
 
 .presentation .session-type {
@@ -373,17 +399,10 @@ strong.smallcaps {
   display: block;
 }
 
-.author strong,
-strong {
-  font-weight: 900;
-}
-
 /* francophone chat bubble */
 .francophone {
   height: 1.5em;
   width: 1.5em;
-  /* background: url(francophone-solid.svg) no-repeat center center; */
-  /* background: url(francophone.svg) no-repeat center center; */
   background: url(francophone-circle.svg) no-repeat center center;
   background-size: contain;
   position: absolute;
@@ -400,10 +419,7 @@ strong {
   top: .35em;
 }
 
-.presentation .poster .sessioncode {
-  display:none;
-}
-
+/* Colored track dot */
 .whatTrack {
   height: 3em;
   width: 3em;
@@ -417,6 +433,7 @@ strong {
 }
 
 /* full list of authors */
+/* better pdf output for index! */
 #type-authors {
   -webkit-column-count: 4; /* Chrome, Safari, Opera */
   -moz-column-count: 4; /* Firefox */
@@ -432,23 +449,4 @@ strong {
   display: block;
   text-indent: -2em;
   padding-left: 2em;
-}
-
-#type-authors .author * {
-  display: inline;
-}
-
-#type-authors .author::after,
-#type-authors .author:last-child::after,
-#type-authors .author:last-of-type::after,
-#type-authors  .author::before  {
-  content: "";
-  display: none;
-  margin-right: 0;
-  word-wrap: normal;
-}
-
-/* fix some weird poster session thing? */
-#type-posters .poster-session h3 {
-  page-break-after: always;
 }
