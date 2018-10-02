@@ -155,6 +155,7 @@ export default function fixData(data) {
   const {
     Poster, Workshop, Opening, ...sessions
   } = _.groupBy(items, 'sessionType')
+  const sideEventItems = _fp.filter(item => !!item.presentations.length, sessions['Side Events'])
   const sideEvents = addGrouping(sessions['Side Events'])
   delete sessions['Side Events']
   apiData = {
@@ -165,6 +166,7 @@ export default function fixData(data) {
     workshop: addGrouping(Workshop),
     sideEvents,
     overview: addGrouping(items),
+    sideEventItems: _fp.map(_fp.pick(['sessionCode']), sideEventItems),
     // sessions: _.filter(items, (item) => {
     // return (item.sessionType === 'Oral Presentations' || item.sessionType === 'Preformed Panel')
     // })
