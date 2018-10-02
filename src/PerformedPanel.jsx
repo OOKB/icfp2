@@ -17,37 +17,41 @@ function PerformedPanel(props) {
     DescriptionEl = <div className="description" dangerouslySetInnerHTML={{ __html: sessionDescription }} />
   }
 
-  return (
-    <div className="presentation">
-      { sessionCode ? <div className="sessioncode">{ sessionCode }</div> : false }
-      <div className="sessionname">{ sessionName }</div>
-      { sessionType ? (
-        <div className="session-type">
-          <strong className="smallcaps">Type:</strong>
-          {' '}
-          { sessionType }
-        </div>
-      ) : false }
-      { trackId && <TrackColorDot trackId={trackId} /> }
-      { trackName ? (
-        <div className="trackname">
-          <strong className="smallcaps">Track:</strong>
-          {' '}
-          { trackName }
-        </div>
-      ) : false }
-      {/* <starttime>{ timeStr }</starttime> */}
-      { trackName ? (
-        <div className="sessionroom">
-          <strong className="smallcaps">Location:</strong>
-          {' '}
-          { sessionRoom }
-        </div>
-      ) : false }
+  const whereToBreak = "presentation " + `${ sessionCode }`
 
-      { sessionChairs.map(item => (
-        <Author key={item.id} tagName="moderator" {...item} />
-      ))}
+  return (
+    <div className={ whereToBreak }>
+      <header className="tryNottoBreak">
+        { sessionCode ? <div className="sessioncode">{ sessionCode }</div> : false }
+        <div className="sessionname">{ sessionName }</div>
+        { sessionType ? (
+          <div className="session-type">
+            <strong className="smallcaps">Type:</strong>
+            {' '}
+            { sessionType }
+          </div>
+        ) : false }
+        { trackId && <TrackColorDot trackId={trackId} /> }
+        { trackName ? (
+          <div className="trackname">
+            <strong className="smallcaps">Track:</strong>
+            {' '}
+            { trackName }
+          </div>
+        ) : false }
+        {/* <starttime>{ timeStr }</starttime> */}
+        { trackName ? (
+          <div className="sessionroom">
+            <strong className="smallcaps">Location:</strong>
+            {' '}
+            { sessionRoom }
+          </div>
+        ) : false }
+
+        { sessionChairs.map(item => (
+          <Author key={item.id} tagName="moderator" {...item} />
+        ))}
+      </header>
 
       { DescriptionEl }
 

@@ -26,14 +26,6 @@ body {
   widows: 2;
 }
 
-/* For index */
-/* @page :first {
-  margin-top: 5.8465in;
-  margin-right: 0.625in;
-  margin-bottom: 1.2405in;
-  margin-left: 0.625in;
-}
- */
 html {
   font: 8pt/1.25 "Gentona Book", GentonaBook, "Gentona", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 300;
@@ -100,6 +92,10 @@ h1 {
   column-span: all;
 }
 
+/* this should only be this way if
+these things are children or siblings with
+specific kinds of other elements */
+
 h2,h3,h4,h5,h6,
 .postertitle,
 .title {
@@ -122,25 +118,18 @@ h2,h3,h4,h5,h6,
   page-break-before: always;
 }
 
-.timeslot h3 {
-  page-break-after: always;
-}
-
 h2 + .timeslot {
   margin-top: 0;
 }
 
-poster-session .columns {
-  margin-top: 1.2rem;
-}
-
 .columns {
+  margin-top: 1.2rem;
   -webkit-column-count: 2; /* Chrome, Safari, Opera */
   -moz-column-count: 2; /* Firefox */
   column-count: 2;
-  -webkit-column-gap: 1.5rem; /* Chrome, Safari, Opera */
-  -moz-column-gap: 1.5rem; /* Firefox */
-  column-gap: 1.5rem;
+  -webkit-column-gap: 1.25em; /* Chrome, Safari, Opera */
+  -moz-column-gap: 1.25em; /* Firefox */
+  column-gap: 1.25em;
 }
 
 .time,
@@ -169,16 +158,25 @@ poster-session .columns {
 .poster,
 .presentation,
 .panel {
-  border-top: 1pt solid black;
   font-size: 1rem;
-  padding-top: 1rem;
   padding-bottom: 2rem;
   padding-left: 4rem;
-  /**/
-  page-break-after: auto;
-  page-break-inside:avoid;
+  page-break-after: avoid;
 }
 
+.poster,
+.tryNottoBreak {
+  border-top: 1pt solid black;
+  padding-top: 1rem;
+}
+
+.tryNottoBreak {
+  margin-left: -4em;
+  padding-left: 4em;
+}
+
+.poster,
+header.tryNottoBreak,
 .sessioncode,
 .sessionname,
 .sessionroom,
