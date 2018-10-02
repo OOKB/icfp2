@@ -159,7 +159,6 @@ h2 + .timeslot {
 .presentation,
 .panel {
   font-size: 1rem;
-  padding-bottom: 2rem;
   padding-left: 4rem;
   page-break-after: avoid;
 }
@@ -170,12 +169,19 @@ h2 + .timeslot {
   padding-top: 1rem;
 }
 
+.poster-session .poster,
+.presentation,
+.panel {
+  margin-bottom: 2rem;
+}
+
 .tryNottoBreak {
   margin-left: -4em;
   padding-left: 4em;
 }
 
 .poster,
+.poster > *,
 header.tryNottoBreak,
 .sessioncode,
 .sessionname,
@@ -184,8 +190,8 @@ header.tryNottoBreak,
 .postertitle,
 .author,
 .whatTrack {
-  page-break-before: auto;
-  page-break-after: auto;
+  page-break-before: avoid;
+  page-break-after: avoid;
   page-break-inside: avoid;
 }
 
