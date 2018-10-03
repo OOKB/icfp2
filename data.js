@@ -55,7 +55,7 @@ export function fixPanelDescription(description) {
 
 function fixPresentation({
   orderof, description, authors = [], ...rest
-}, i, { sessionType }) {
+}, i, { sessionCode, sessionType }) {
   const presentation = { ...rest, description: {} }
   presentation.authors = authors.map(auth => fixAuthor({
     ...auth,
@@ -80,6 +80,7 @@ function fixPresentation({
       ['isPresenter', 'lastName', 'firstName'], ['desc', 'asc', 'asc'], presentation.authors,
     )
   }
+  presentation.key = _fp.kebabCase([sessionCode, rest.id])
   return presentation
 }
 
@@ -105,11 +106,11 @@ function fixDataItem({
     ...rest,
   }
   if (!newItem.sessionCode) {
-    newItem.sessionCode = `[${sessionId.toString()}]`
+    newItem.sessionCode = sessionId.toString()
     newItem.sessionCodeErr = true
   }
   newItem.presentations = presentations.map(
-    (presentation, i) => fixPresentation(presentation, i, rest),
+    (presentation, i) => fixPresentation(presentation, i, newItem),
   )
   return newItem
 }
