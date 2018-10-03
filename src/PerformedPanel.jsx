@@ -17,10 +17,10 @@ function PerformedPanel(props) {
     DescriptionEl = <div className="description" dangerouslySetInnerHTML={{ __html: sessionDescription }} />
   }
 
-  const whereToBreak = "presentation " + `${ sessionCode }`
+  const whereToBreak = `presentation ${sessionCode}`
 
   return (
-    <div className={ whereToBreak }>
+    <div className={whereToBreak}>
       <header className="tryNottoBreak">
         { sessionCode ? <div className="sessioncode">{ sessionCode }</div> : false }
         <div className="sessionname">{ sessionName }</div>
@@ -56,7 +56,7 @@ function PerformedPanel(props) {
       { DescriptionEl }
 
       { presentations.map(item => (
-        <Presentation key={item.id} {...item} />
+        <Presentation {...item} divId={item.key} />
       ))}
 
     </div>

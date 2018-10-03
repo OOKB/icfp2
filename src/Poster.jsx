@@ -21,7 +21,7 @@ class Poster extends Component {
 
         <div className="columns">
           { presentations.map(item => (
-            <Presentation key={item.id} {...item} />
+            <Presentation {...item} divId={item.key} />
           ))}
         </div>
 
