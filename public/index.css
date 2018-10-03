@@ -163,6 +163,12 @@ h2 + .timeslot {
 .presentation,
 .panel {
   page-break-after: avoid;
+  /* page-break-inside: avoid; */
+}
+
+.presentation.[31078],
+.presentation.[31066] {
+  page-break-inside: avoid;
 }
 
 .poster,
@@ -214,7 +220,10 @@ header.tryNottoBreak,
 
 .tryNottoBreak {
   margin-left: -4em;
+  margin-right: -4em;
   padding-left: 4em;
+  width: calc(100% + 8em);
+  box-sizing: content-box;
 }
 
 /** id and title **/
@@ -227,6 +236,10 @@ header.tryNottoBreak,
 
 .ataglance .sessioncode {
   position: static;
+}
+
+#type-sessions .poster .sessioncode {
+  display:none;
 }
 
 /** Presentation/Panel settings **/

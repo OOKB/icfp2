@@ -18,11 +18,20 @@ function Presentation({
       </div>
     ))
   }
+
+  let DescriptionEl = false
+  if (description.text) {
+    DescriptionEl = <div className="secondaryDescription" dangerouslySetInnerHTML={{ __html: description.text }} />
+  }
+
   return (
     <div className="poster">
       { id ? <div className="sessioncode">{id}</div> : false }
       { onlyFrench && <div className="francophone" /> }
       { title ? <div className="postertitle">{title}</div> : false }
+
+      { DescriptionEl }
+
       { PanelPresentationsEl }
       <div className="authors">
         { authors.map(item => <Author key={item.id} {...item} />) }
