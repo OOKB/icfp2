@@ -1,7 +1,7 @@
 /* globals describe test expect */
 import _ from 'lodash/fp'
 import {
-  addAuthorEvent, fixAuthor, fixLast, getLastSort, titleId,
+  addAuthorEvent, fixAuthor, fixLast, getLastSort, rmNoData, titleId,
 } from './utils'
 
 const title = 'Reproductive rights and gender empowerment'
@@ -93,4 +93,18 @@ describe('fixLast', () => {
     expect(fixLast('van Dijke')).toEqual('van Dijke')
     expect(fixLast('van mensvoort')).toEqual('van mensvoort')
   })
+})
+
+const items = [{
+  withdrawn: 0,
+  startTime: '2018-11-13 ',
+  description: '',
+  endTime: '2018-11-13 ',
+  title: '',
+  id: 145453,
+  orderof: 9,
+},
+]
+describe('rmNoData', () => {
+
 })

@@ -5,7 +5,7 @@ import humps from 'lodash-humps'
 import { oneOf } from 'cape-lodash'
 import sanitizeHtml from 'sanitize-html'
 import {
-  addAuthorEvent, doTitleize, fixAuthor, titleId,
+  addAuthorEvent, doTitleize, fixAuthor, rmNoData, titleId, validPresenations,
 } from './src/utils'
 
 const getEventCode = _.cond([
@@ -109,7 +109,7 @@ function fixDataItem({
     newItem.sessionCode = sessionId.toString()
     newItem.sessionCodeErr = true
   }
-  newItem.presentations = presentations.map(
+  newItem.presentations = validPresenations(presentations).map(
     (presentation, i) => fixPresentation(presentation, i, newItem),
   )
   return newItem
@@ -138,8 +138,7 @@ function addGrouping(items) {
   return days
 }
 
-const rmNoTime = _fp.reject({ sessionStartTime: ' ', sessionEndTime: ' ' })
-const getItems = _fp.flow(humps, rmNoTime, _fp.map(fixDataItem))
+const getItems = _fp.flow(humps, rmNoData, _fp.map(fixDataItem))
 const getSessions = _fp.flow(
   _fp.values,
   _fp.flatten,

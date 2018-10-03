@@ -83,3 +83,9 @@ export const addAuthorEvent = (authors, eventCode, id) => _.reduce((authorIndex,
   item.events = [...item.events, eventInfo(eventCode, id, author)]
   return _.set(author.id, item, authorIndex)
 }, authors)
+
+export const rmNoData = _.reject(_.overSome([
+  _.matches({ sessionStartTime: ' ', sessionEndTime: ' ' }),
+  _.matches({ sessionName: '', sessionDescription: '' }),
+]))
+export const validPresenations = _.reject({ title: '', description: '' })
