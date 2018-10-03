@@ -8,9 +8,10 @@ import {
   addAuthorEvent, doTitleize, fixAuthor, rmNoData, titleId, validPresenations,
 } from './src/utils'
 
+const isPoster = oneOf(['Poster', 'Poster presentations'])
 const getEventCode = _.cond([
   [
-    _fp.conforms({ sessionType: oneOf(['Poster', 'Poster presentations']) }),
+    _fp.conforms({ sessionType: isPoster }),
     _fp.flow(_fp.get('sessionName'), _fp.replace(' Session ', '.'), str => str.concat('.')),
   ],
   [
@@ -61,6 +62,12 @@ function fixPresentation({
     ...auth,
     presenter: sessionType === 'Preformed Panel' ? undefined : auth.presenter,
   }))
+  if (isPoster(sessionType)) {
+    const idParts = presentation.id.toString().split('.')
+    if (idParts.length > 1) {
+      presentation.id = `${idParts[0]}.${_.padEnd(idParts[1], 2, '0')}`
+    }
+  }
   // Fix description fields.
   if (_.isString(description)) {
     presentation.description.text = description
@@ -77,7 +84,7 @@ function fixPresentation({
   }
   if (presentation.authors.length > 1) {
     presentation.authors = _fp.orderBy(
-      ['isPresenter', 'lastName', 'firstName'], ['desc', 'asc', 'asc'], presentation.authors,
+      ['isPresenter', 'lastName', 'firstName', 'isChair'], ['desc', 'asc', 'asc'], presentation.authors,
     )
   }
   presentation.key = _fp.kebabCase([sessionCode, rest.id])
