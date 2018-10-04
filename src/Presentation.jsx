@@ -49,6 +49,6 @@ Presentation.propTypes = {
   divId: PropTypes.string.isRequired,
   title: PropTypes.string,
   panelPresentations: PropTypes.arrayOf(PropTypes.object),
-  id: PropTypes.number.isRequired,
+  id: PropTypes.string.isRequired,
 }
 export default Presentation

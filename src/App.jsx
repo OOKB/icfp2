@@ -4,16 +4,26 @@ import PropTypes from 'prop-types'
 import json from './data'
 import Apps from './Apps'
 import PageIndex from './PageIndex'
+import { buildData } from './clientUtils'
 // Create Document Component
 
+const { authors, items } = json
+const data = buildData(items)
+console.log(data.opening)
+const family = data.overviewTracks.returnsInvestmentFamilyPlanningDemographicDividend
+const reproductive = data.overviewTracks.sexualReproductiveHealthRightsAmongAdolescentsYouth
+const faith = data.overviewTracks.faithFamilyPlanning
 const pages = {
-  '/opening': { items: json.opening, layout: 'sessions' },
-  '/workshop': { items: json.workshop, layout: 'sessions' },
-  '/sessions': { items: json.sessions, layout: 'sessions' },
-  '/posters': { items: json.posters, layout: 'posters', keyId: 'sessionCode' },
-  '/authors': { items: json.authors, layout: 'authors', keyId: 'id' },
-  '/overview': { items: json.overview, layout: 'overview' },
-  '/sideshow': { items: json.sideEvents, layout: 'sessions', keyId: 'sessionCode' },
+  '/opening': { items: data.opening, layout: 'sessions' },
+  '/workshop': { items: data.workshop, layout: 'sessions' },
+  '/sessions': { items: data.sessions, layout: 'sessions' },
+  '/posters': { items: data.posters, layout: 'posters', keyId: 'sessionCode' },
+  '/authors': { items: authors, layout: 'authors', keyId: 'id' },
+  '/overview': { items: data.overview, layout: 'overview' },
+  '/sideshow': { items: data.sideEvents, layout: 'sessions', keyId: 'sessionCode' },
+  '/overview/family': { items: family, layout: 'overview' },
+  '/overview/reproductive': { items: reproductive, layout: 'overview' },
+  '/overview/faith': { items: faith, layout: 'overview' },
 }
 
 const App = ({ dispatch, pathname }) => {

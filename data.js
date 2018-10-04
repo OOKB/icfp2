@@ -124,66 +124,27 @@ function fixDataItem({
   return newItem
 }
 
-function addGrouping(items) {
-  const dateGroups = _.groupBy(items, 'sessionDate')
-  const days = []
-  _.each(_.keys(dateGroups), (sessionDate) => {
-    days.push({
-      sessionDate,
-      timeSlots: _.map(_.groupBy(dateGroups[sessionDate], 'sessionStartTime'), sessions => ({
-        sessionStartTime: sessions[0].sessionStartTime,
-        sessionEndTime: sessions[0].sessionEndTime,
-        sessions: _.map(sessions, (session) => {
-          if (session.sessionDescription) {
-            session.sessionDescription = sanitizeHtml(session.sessionDescription, {
-              allowedTags: ['b', 'i', 'em', 'strong', 'p', 'ul', 'li'],
-            })
-          }
-          return session
-        }),
-      })),
-    })
-  })
-  return days
-}
-
 const getItems = _fp.flow(humps, rmNoData, _fp.map(fixDataItem))
-const getSessions = _fp.flow(
+
+const getAuthors = _fp.flow(
+  _fp.reduce(addAuthors, {}),
   _fp.values,
-  _fp.flatten,
-  addGrouping,
+  _fp.sortBy(['lastSort', 'firstname']),
 )
+const getUniq = fieldId => _fp.flow(_fp.map(fieldId), _.uniq)
 
 export default function fixData(data) {
   let apiData = null
   cli.log('fetch new data')
   cli.log('transform new data')
   const items = getItems(data)
-  const authorIndex = _fp.reduce(addAuthors, {}, items)
 
-  const {
-    Poster, Workshop, Opening, ...sessions
-  } = _.groupBy(items, 'sessionType')
-  const sideEventItems = _fp.filter(item => !!item.presentations.length, sessions['Side Events'])
-  const sideEvents = addGrouping(sessions['Side Events'])
-  delete sessions['Side Events']
   apiData = {
-    trackIds: _.uniq(_.map(items, 'trackId')),
-    sessionIds: _.keys(sessions),
-    posters: Poster,
-    opening: addGrouping(Opening),
-    workshop: addGrouping(Workshop),
-    sideEvents,
-    overview: addGrouping(items),
-    sideEventItems: _fp.map(_fp.pick(['sessionCode']), sideEventItems),
-    // sessions: _.filter(items, (item) => {
-    // return (item.sessionType === 'Oral Presentations' || item.sessionType === 'Preformed Panel')
-    // })
+    authors: getAuthors(items),
+    items,
+    trackIds: getUniq('trackId')(items),
+    sessionIds: getUniq('sessionType')(items),
   }
-  delete sessions.Plenary
-
-  apiData.sessions = getSessions(sessions)
-  apiData.authors = _.sortBy(_.values(authorIndex), ['lastSort', 'firstname'])
   cli.log('return new data')
   return { apiData, data }
 }
