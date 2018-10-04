@@ -2,16 +2,15 @@ import cli from 'better-console'
 import _ from 'lodash'
 import _fp from 'lodash/fp'
 import humps from 'lodash-humps'
-import { oneOf } from 'cape-lodash'
 import sanitizeHtml from 'sanitize-html'
 import {
-  addAuthorEvent, doTitleize, fixAuthor, rmNoData, titleId, validPresenations,
+  addAuthorEvent, doTitleize, fixAuthor, isPoster, isTypePoster,
+  rmNoData, sortPresentations, titleId, validPresenations,
 } from './src/utils'
 
-const isPoster = oneOf(['Poster', 'Poster presentations'])
 const getEventCode = _.cond([
   [
-    _fp.conforms({ sessionType: isPoster }),
+    isTypePoster,
     _fp.flow(_fp.get('sessionName'), _fp.replace(' Session ', '.'), str => str.concat('.')),
   ],
   [
@@ -54,9 +53,9 @@ export function fixPanelDescription(description) {
   return _fp.values(panelPresentationIndex)
 }
 
-function fixPresentation({
+const fixPresentation = ({ sessionCode, sessionType }) => ({
   orderof, description, authors = [], ...rest
-}, i, { sessionCode, sessionType }) {
+}) => {
   const presentation = { ...rest, description: {} }
   presentation.authors = authors.map(auth => fixAuthor({
     ...auth,
@@ -64,8 +63,8 @@ function fixPresentation({
   }))
   if (isPoster(sessionType)) {
     const idParts = presentation.id.toString().split('.')
-    if (idParts.length > 1) {
-      presentation.id = `${idParts[0]}.${_.padEnd(idParts[1], 2, '0')}`
+    if (idParts.length === 2) {
+      presentation.id = `${idParts[0]}.${_.padEnd(idParts[1], 3, '0')}`
     }
   }
   // Fix description fields.
@@ -90,6 +89,11 @@ function fixPresentation({
   presentation.key = _fp.kebabCase([sessionCode, rest.id])
   return presentation
 }
+const fixPresentations = session => _fp.flow(
+  validPresenations,
+  _fp.map(fixPresentation(session)),
+  sortPresentations(session),
+)
 
 function fixDescription(sessionDescription) {
   if (!sessionDescription) {
@@ -116,9 +120,7 @@ function fixDataItem({
     newItem.sessionCode = sessionId.toString()
     newItem.sessionCodeErr = true
   }
-  newItem.presentations = validPresenations(presentations).map(
-    (presentation, i) => fixPresentation(presentation, i, newItem),
-  )
+  newItem.presentations = fixPresentations(newItem)(presentations)
   return newItem
 }
 

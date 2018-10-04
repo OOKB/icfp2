@@ -1,6 +1,6 @@
 import _ from 'lodash/fp'
 import { titleize } from 'inflection'
-import { condId } from 'cape-lodash'
+import { condId, oneOf } from 'cape-lodash'
 
 export function doTitleize(str) {
   // If the string is empty or false return it.
@@ -88,4 +88,8 @@ export const rmNoData = _.reject(_.overSome([
   _.matches({ sessionStartTime: ' ', sessionEndTime: ' ' }),
   _.matches({ sessionName: '', sessionDescription: '' }),
 ]))
+export const isPoster = oneOf(['Poster', 'Poster presentations'])
+export const isTypePoster = _.conforms({ sessionType: isPoster })
+export const sortById = _.orderBy(['id'], ['asc'])
+export const sortPresentations = session => (isTypePoster(session) ? sortById : _.identity)
 export const validPresenations = _.reject({ title: '', description: '' })
