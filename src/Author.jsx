@@ -42,11 +42,11 @@ function isInit(index, items) {
   return index < items.length - 1
 }
 function Author({
-  company, id, isPresenter, events, tagName, ...other
+  company, id, isPresenter, isChair, events, tagName, ...other
 }) {
-  const fullName = getAuthorName({ events, isPresenter, ...other })
+  const fullName = getAuthorName({ events, isPresenter, isChair, ...other })
   return (
-    <div className={getClassName(tagName, isPresenter)} title={id}>
+    <div className={getClassName(tagName, isPresenter, isChair)} title={id}>
       <p className="person">
         <span className="fullname">{fullName}</span>
         { company && <span className="company">{ company }</span> }
