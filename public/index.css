@@ -344,7 +344,7 @@ header.tryNottoBreak,
 }
 
 .moderator p:first-of-type::before {
-  content: "Moderator(s): ";
+  content: "Chair(s): ";
   display: inline-block;
   margin: 0;
   padding-right: .3em;
