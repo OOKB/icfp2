@@ -53,6 +53,15 @@ export function fixPanelDescription(description) {
   return _fp.values(panelPresentationIndex)
 }
 
+function fixDescription(sessionDescription) {
+  if (!sessionDescription) {
+    return sessionDescription
+  }
+  return sanitizeHtml(sessionDescription, {
+    allowedTags: ['b', 'i', 'em', 'strong', 'p', 'ul', 'li'],
+  })
+}
+
 const fixPresentation = ({ sessionCode, sessionType }) => ({
   orderof, description, authors = [], ...rest
 }) => {
@@ -69,7 +78,7 @@ const fixPresentation = ({ sessionCode, sessionType }) => ({
   }
   // Fix description fields.
   if (_.isString(description)) {
-    presentation.description.text = description
+    presentation.description.text = fixDescription(description)
   } else {
     _.each(description, (desc) => {
       presentation.description[titleId(desc.fieldLabel)] = desc.fieldValue
@@ -94,15 +103,6 @@ const fixPresentations = session => _fp.flow(
   _fp.map(fixPresentation(session)),
   sortPresentations(session),
 )
-
-function fixDescription(sessionDescription) {
-  if (!sessionDescription) {
-    return sessionDescription
-  }
-  return sanitizeHtml(sessionDescription, {
-    allowedTags: ['b', 'i', 'em', 'strong', 'p', 'ul', 'li'],
-  })
-}
 
 function fixDataItem({
   presentations, sessionDescription, sessionChairs,
