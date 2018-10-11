@@ -99,6 +99,11 @@ function fixDataItem({
   if (!newItem.sessionCode) {
     newItem.sessionCode = sessionId.toString()
     newItem.sessionCodeErr = true
+  } else {
+    const idParts = newItem.sessionCode.toString().split('.')
+    if (idParts.length === 3) {
+      newItem.sessionCode = `${idParts[0]}.${idParts[1]}.${_.padStart(idParts[2], 2, '0')}`
+    }
   }
   newItem.presentations = fixPresentations(newItem)(presentations)
   return newItem

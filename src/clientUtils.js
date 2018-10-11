@@ -11,7 +11,7 @@ const getTimeSlots = sessions => ({
 })
 const getSessionDate = dateGroup => ({
   sessionDate: dateGroup[0].sessionDate,
-  timeSlots: _.map(getTimeSlots, _.groupBy('sessionStartTime', dateGroup)),
+  timeSlots: _.flow(_.groupBy('sessionStartTime'), _.map(getTimeSlots))(dateGroup),
 })
 
 const addGrouping = _.flow(
@@ -22,6 +22,7 @@ const addGrouping = _.flow(
 const getSessions = _.flow(
   _.values,
   _.flatten,
+  _.sortBy('sessionCode'),
   addGrouping,
 )
 const getOverviewTracks = _.flow(

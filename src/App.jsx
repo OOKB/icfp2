@@ -9,7 +9,7 @@ import { buildData } from './clientUtils'
 
 const { authors, items } = json
 const data = buildData(items)
-console.log(data.opening)
+
 const family = data.overviewTracks.returnsInvestmentFamilyPlanningDemographicDividend
 const reproductive = data.overviewTracks.sexualReproductiveHealthRightsAmongAdolescentsYouth
 const faith = data.overviewTracks.faithFamilyPlanning
