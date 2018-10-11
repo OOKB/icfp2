@@ -39,12 +39,14 @@ Event.propTypes = {
   initial: PropTypes.bool.isRequired,
 }
 function isInit(index, items) {
-  return index < items.length - 1
+  return index < (items.length - 1)
 }
 function Author({
   company, id, isPresenter, isChair, events, tagName, ...other
 }) {
-  const fullName = getAuthorName({ events, isPresenter, isChair, ...other })
+  const fullName = getAuthorName({
+    events, isPresenter, isChair, ...other,
+  })
   return (
     <div className={getClassName(tagName, isPresenter, isChair)} title={id}>
       <p className="person">
@@ -60,9 +62,13 @@ Author.defaultProps = {
   company: null,
   namePrefix: '',
   nameSuffix: '',
+  isPresenter: false,
+  isChair: false,
 }
 Author.propTypes = {
   company: PropTypes.string,
   id: PropTypes.string.isRequired,
+  isChair: PropTypes.bool,
+  isPresenter: PropTypes.bool,
 }
 export default Author

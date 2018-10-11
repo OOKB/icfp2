@@ -70,7 +70,7 @@ export function fixAuthor(item) {
 }
 
 const eventInfo = (eventCode, id, author) => ({
-  eventCode: id ? eventCode + id : eventCode,
+  eventCode,
   isChair: !id,
   isPresenter: author.isPresenter,
 })
