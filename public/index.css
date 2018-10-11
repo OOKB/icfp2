@@ -132,12 +132,12 @@ h2 + .timeslot {
   margin-bottom: 2rem;
 }
 
-.location,
 .poster-session .sessionRoom {
   text-transform: uppercase;
   font-weight: 100;
   line-height: 2.4;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
+  letter-spacing: .1em;
 }
 
 /** some layout related stuff; 2 columns on everything! */
