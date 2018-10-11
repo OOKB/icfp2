@@ -22,7 +22,7 @@ const addGrouping = _.flow(
 const getSessions = _.flow(
   _.values,
   _.flatten,
-  _.sortBy('sessionCode'),
+  _.sortBy(['sessionCode', 'position']),
   addGrouping,
 )
 const getOverviewTracks = _.flow(

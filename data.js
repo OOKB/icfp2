@@ -87,13 +87,14 @@ const fixPresentations = session => _fp.flow(
 function fixDataItem({
   presentations, sessionDescription, sessionChairs,
   sessionDate, sessionId, sessionType, ...rest
-}) {
+}, position) {
   const newItem = {
     sessionChairs: sessionChairs.map(fixAuthor),
     sessionDate: sessionDate || 'none',
     sessionDescription: fixDescription(sessionDescription),
     sessionType: sessionType || 'Opening',
     trackId: titleId(rest.trackName || sessionType),
+    position,
     ...rest,
   }
   if (!newItem.sessionCode) {
@@ -109,7 +110,7 @@ function fixDataItem({
   return newItem
 }
 
-const getItems = _fp.flow(humps, rmNoData, _fp.map(fixDataItem))
+const getItems = _fp.flow(humps, rmNoData, items => _.map(items, fixDataItem))
 
 const getAuthors = _fp.flow(
   _fp.reduce(addAuthors, {}),
