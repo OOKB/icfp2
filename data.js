@@ -4,29 +4,9 @@ import _fp from 'lodash/fp'
 import humps from 'lodash-humps'
 import sanitizeHtml from 'sanitize-html'
 import {
-  addAuthorEvent, doTitleize, fixAuthor, isPoster, isTypePoster,
+  addAuthors, doTitleize, fixAuthor, isPoster,
   rmNoData, sortPresentations, titleId, validPresenations,
 } from './src/utils'
-
-const getEventCode = _.cond([
-  [
-    isTypePoster,
-    _fp.flow(_fp.get('sessionName'), _fp.replace(' Session ', '.'), str => str.concat('.')),
-  ],
-  [
-    _fp.stubTrue,
-    _fp.get('sessionCode'),
-  ],
-])
-
-function addAuthors(authorIndex, item) {
-  const eventCode = getEventCode(item)
-  return _fp.reduce(
-    (result, { authors, id }) => addAuthorEvent(result, eventCode, id)(authors),
-    addAuthorEvent(authorIndex, eventCode, false)(item.sessionChairs),
-    item.presentations,
-  )
-}
 
 export function getAuthId(firstname, lastname, company) {
   const coStr = company ? ` ${company.toString().substr(0, 3)}` : ''

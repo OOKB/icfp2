@@ -69,18 +69,18 @@ export function fixAuthor(item) {
   return author
 }
 
-const eventInfo = (eventCode, id, author) => ({
+const eventInfo = (eventCode, isChair, author) => ({
   eventCode,
-  isChair: !id,
+  isChair,
   isPresenter: author.isPresenter,
 })
 const getAuthorInfo = _.flow(
   _.set('events', []),
   _.omit(['isPresenter', 'company']),
 )
-export const addAuthorEvent = (authors, eventCode, id) => _.reduce((authorIndex, author) => {
+export const addAuthorEvent = (authors, eventCode, isChair) => _.reduce((authorIndex, author) => {
   const item = authorIndex[author.id] || getAuthorInfo(author)
-  item.events = [...item.events, eventInfo(eventCode, id, author)]
+  item.events = [...item.events, eventInfo(eventCode, isChair, author)]
   return _.set(author.id, item, authorIndex)
 }, authors)
 
@@ -93,3 +93,25 @@ export const isTypePoster = _.conforms({ sessionType: isPoster })
 export const sortById = _.orderBy(['id'], ['asc'])
 export const sortPresentations = session => (isTypePoster(session) ? sortById : _.identity)
 export const validPresenations = _.reject({ title: '', description: '' })
+export const getPosterCode = id => `Poster ${id}`
+export const getPresCode = (item, code, id) => (isTypePoster(item) ? getPosterCode(id) : code)
+
+// const getEventCode = _.cond([
+//   [
+//     isTypePoster,
+//     _.flow(_.get('sessionName'), _.replace(' Session ', '.'), str => str.concat('.')),
+//   ],
+//   [
+//     _.stubTrue,
+//     _.get('sessionCode'),
+//   ],
+// ])
+// item is session. Then presentations.
+export function addAuthors(authorIndex, item) {
+  const code = item.sessionCode || item.sessionName
+  return _.reduce(
+    (result, { authors, id }) => addAuthorEvent(result, getPresCode(item, code, id))(authors),
+    addAuthorEvent(authorIndex, code, true)(item.sessionChairs), // result
+    item.presentations,
+  )
+}
