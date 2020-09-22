@@ -11,7 +11,7 @@
     "cape-lodash": "^1.13.2",
     "cape-style": "^1.1.0",
     "date-fns": "^1.29.0",
-    "esm": "^3.0.74",
+    "esm": "^3.1.0",
     "fs-extra": "^7.0.0",
     "inflection": "^1.12.0",
     "lodash": "^4.17.10",
