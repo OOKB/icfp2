@@ -1,0 +1,646 @@
+{
+  "SessionCode": "2.3.9",
+  "SessionEndTime": "2018-11-14 15:55:00",
+  "SessionID": 30796,
+  "StartTimeUnix": "",
+  "EndTimeUnix": "",
+  "SessionChairs": [
+    {
+      "ChairType": "Session Chair",
+      "ChairOrder": 2,
+      "City": "KAMPALA",
+      "Country": "Uganda",
+      "Lastname": "Musinguzi",
+      "State": "",
+      "Firstname": "Jotham",
+      "Email": "jotham.musinguzi@npcsec.go.ug",
+      "ContactID": 14646,
+      "Company": "National Population Council"
+    }
+  ],
+  "SessionDate": "2018-11-14",
+  "SessionName": "Outbreaks, epidemics, and family planning programs in humanitarian settings / Épidémies, pandémies et programmes de planification familiale en situation de crise humanitaire",
+  "TrackID": 541,
+  "Presentations": [
+    {
+      "Withdrawn": 0,
+      "StartTime": "",
+      "Description": [
+        {
+          "field_id": 8242,
+          "field_label": "Which does your abstract address?",
+          "field_value": "Research findings",
+          "url": ""
+        },
+        {
+          "field_id": 8236,
+          "field_label": "In which language is your abstract written?",
+          "field_value": "English",
+          "url": ""
+        },
+        {
+          "field_id": 10113,
+          "field_label": "In which language will your abstract be presented?",
+          "field_value": "English",
+          "url": ""
+        },
+        {
+          "field_id": 8239,
+          "field_label": "Track (First choice)",
+          "field_value": "Family planning and reproductive health in humanitarian settings",
+          "url": ""
+        },
+        {
+          "field_id": 8243,
+          "field_label": "Title",
+          "field_value": "Pregnancy Prevention in Crisis: Lessons from Women and Health Workers in Sierra Leone's Ebola Outbreak",
+          "url": ""
+        },
+        {
+          "field_id": 8244,
+          "field_label": "Significance/background",
+          "field_value": "<p>Infectious disease outbreaks in human populations are on the rise. People in low-income countries are especially vulnerable due to underlying health conditions and a lack of appropriate and accessible health services.  When nosocomial transmission is common, e.g. for hemorrhagic fevers, health facilities may cease to function normally, as health workers refuse to care for potentially infectious patients, and service-users fear contamination at the health clinic. Reproductive health services are particularly vulnerable to such disruptions, as family planning (FP) services and skilled attendant delivery are usually provided at facilities. This results in an increase in unplanned pregnancy and maternal mortality.  </p><p>During the widespread Ebola outbreak in West Africa from 2013-2016, many health facilities were closed or refused care to pregnant women. However FP services to prevent pregnancy were not prioritized by the Ebola response architecture, nor were existing services maintained sufficiently to ensure access for all women who desired to prevent pregnancy. Previous research in Sierra Leone has estimated that this lack of prioritization led to 549-714 additional non-Ebola maternal deaths due to decreased care seeking behaviour, up to 44% of which could have been avoided had FP services remained in place.</p>",
+          "url": ""
+        },
+        {
+          "field_id": 8245,
+          "field_label": "Main question/hypothesis",
+          "field_value": "<p>Aim: To understand FP policy and service responses in Sierra Leone during the Ebola outbreak in order to inform how future outbreak responses could maintain FP access & utilization.</p><p>Our research questions are:</p><p>How was FP provided and accessed in Sierra Leone’s Ebola outbreak?</p><p>How could FP services be made more resilient in future outbreaks? </p>",
+          "url": ""
+        },
+        {
+          "field_id": 8247,
+          "field_label": "Methodology",
+          "field_value": "<p>This retrospective research took place in Kambia and Western Area districts of Sierra Leone, between November 2017 and September 2018.  We used an ethnographic approach to identify and gain trust of women who had, and had not, accessed FP services during the outbreak.</p><p>We used primary and secondary data sources. Primary data collection comprised in-depth interviews with: (i) 19 women to assess influences on access to FP services and use of contraception; and (ii) 7 FP service providers and 9 policy decision-makers to understand the supply side challenges of providing FP care in the outbreak. We also conducted focus group discussions with service users and service providers to identify policy recommendations to promote greater resiliency of FP services in future outbreaks of infectious disease. </p>",
+          "url": ""
+        },
+        {
+          "field_id": 8249,
+          "field_label": "Results/key findings",
+          "field_value": "<p><span style=\"font-size: 12pt; font-family: Calibri;\">At the time of abstract submission, we had completed eight in-depth interviews; full data, analysis and recommendations will be presented at the conference. Preliminary analysis indicates that some women who were already using FP at the time of the outbreak were determined to stay on that method and were able to access services. Their strong motivations were driven by amplified fears of pregnancy in the face of challenges in finding safe delivery locations, and by other desires to delay pregnancy, e.g., in order to return to studies when school restarted. Health care providers reported how, even though they were afraid of becoming infected, they continued to provide all FP methods (including invasive ones that posed a risk of body fluid exposure) to women. They did this because they understood how important FP was, especially given the risks of pregnancy during Ebola.<o:p></o:p></span></p><p></p><p><span style=\"font-size: 12pt; font-family: Calibri;\">While women reported that <i></i>FP became more difficult to access during Ebola, strong desires to prevent pregnancy motivated women to find a way to access it, including through pharmacists, or by asking health workers to provide the service outside of the clinic. Seeking care outside of formal clinics was favoured due to infection risk concerns in clinics.  Health workers were not considered to be a source of infection, as long as they were wearing gloves or other forms of protective equipment.<o:p></o:p></span></p>",
+          "url": ""
+        },
+        {
+          "field_id": 8250,
+          "field_label": "Knowledge contribution",
+          "field_value": "<p>There are currently very limited evidence-based programming strategies on the management of FP services during infectious disease outbreaks. Our research aims to address this gap by providing contextualized, practical recommendations that could be used in both Sierra Leonean and Global guidelines for resilient FP services in such contexts.</p><p>Our early findings suggest that policies and guidelines for FP in outbreaks should include provisions for FP delivery using non-conventional means.  This could include mechanisms to allow pharmacists or health workers to access commodities and provide them outside of the normal clinic environment.  Another approach might to provide women seeking FP who are reluctant to visit health facilities or health workers with self-medication options (e.g., self-injecting contraceptives such as Sayana Press).  Humanitarian agencies responding to outbreaks could stock such methods and ensure they are distributed to populations at greatest risk, including individuals who have been quarantined and adolescents.  </p>",
+          "url": ""
+        },
+        {
+          "field_id": 9339,
+          "field_label": "Are you willing to present your abstract as a poster if not selected for oral presentation?",
+          "field_value": "Yes",
+          "url": ""
+        },
+        {
+          "field_id": 9369,
+          "field_label": "Are you willing to participate in a non-traditional/interactive oral presentation session?",
+          "field_value": "Yes",
+          "url": ""
+        },
+        {
+          "field_id": 8238,
+          "field_label": "Is your abstract about Rwanda or does it use data from Rwanda?",
+          "field_value": "No",
+          "url": ""
+        },
+        {
+          "field_id": 8234,
+          "field_label": "Is the presenter of the abstract under the age of 35 (by April 13, 2018) ?",
+          "field_value": "Yes",
+          "url": ""
+        }
+      ],
+      "EndTime": "",
+      "Title": "Pregnancy Prevention in Crisis: Lessons from Women and Health Workers in Sierra Leone's Ebola Outbreak",
+      "Authors": [
+        {
+          "NameSuffix": "MScPH, BSN, RN",
+          "State": "London",
+          "Firstname": "Gillian ",
+          "Email": "gillian.mckay@lshtm.ac.uk",
+          "Presenter": 1,
+          "ContactID": 9733,
+          "NamePrefix": "Mrs.",
+          "Company": "London School of Hygiene and Tropical Medicine",
+          "City": "London",
+          "Country": "United Kingdom",
+          "Lastname": "McKay",
+          "ContactTitle": "Doctor of Public Health Candidate",
+          "Middle": "",
+          "Orderof": 1
+        },
+        {
+          "NameSuffix": "",
+          "State": "Kambia District",
+          "Firstname": "Maseray ",
+          "Email": "masi.fofanah@gmail.com",
+          "Presenter": 0,
+          "ContactID": 10086,
+          "NamePrefix": "Ms.",
+          "Company": "Independent",
+          "City": "Kambia Town",
+          "Country": "Sierra Leone",
+          "Lastname": "Fofanah",
+          "ContactTitle": "",
+          "Middle": "",
+          "Orderof": 2
+        },
+        {
+          "NameSuffix": "PhD",
+          "State": "London",
+          "Firstname": "Heidi",
+          "Email": "Heidi.Larson@lshtm.ac.uk",
+          "Presenter": 0,
+          "ContactID": 10093,
+          "NamePrefix": "Dr.",
+          "Company": "London School of Hygiene and Tropical Medicine",
+          "City": "London",
+          "Country": "United Kingdom",
+          "Lastname": "Larson",
+          "ContactTitle": "",
+          "Middle": "",
+          "Orderof": 3
+        },
+        {
+          "NameSuffix": "PhD",
+          "State": "London",
+          "Firstname": "Shelley",
+          "Email": "shelley.lees@lshtm.ac.uk",
+          "Presenter": 0,
+          "ContactID": 10098,
+          "NamePrefix": "Dr.",
+          "Company": "London School of Hygiene and Tropical Medicine",
+          "City": "London",
+          "Country": "United Kingdom",
+          "Lastname": "Lees",
+          "ContactTitle": "",
+          "Middle": "",
+          "Orderof": 4
+        }
+      ],
+      "ID": "2.3.9.3",
+      "InternalID": "167186",
+      "Type": "submitted_item",
+      "Orderof": 1
+    },
+    {
+      "Withdrawn": 0,
+      "StartTime": "",
+      "Description": [
+        {
+          "field_id": 8242,
+          "field_label": "Which does your abstract address?",
+          "field_value": "Research findings",
+          "url": ""
+        },
+        {
+          "field_id": 8236,
+          "field_label": "In which language is your abstract written?",
+          "field_value": "English",
+          "url": ""
+        },
+        {
+          "field_id": 10113,
+          "field_label": "In which language will your abstract be presented?",
+          "field_value": "English",
+          "url": ""
+        },
+        {
+          "field_id": 8239,
+          "field_label": "Track (First choice)",
+          "field_value": "Family planning and reproductive health in humanitarian settings",
+          "url": ""
+        },
+        {
+          "field_id": 9338,
+          "field_label": "Optional second choice track",
+          "field_value": "Integration of family planning into health and development programs",
+          "url": ""
+        },
+        {
+          "field_id": 8243,
+          "field_label": "Title",
+          "field_value": "Family Planning During and After the Ebola Crisis: Evidence from Liberia and Sierra Leone",
+          "url": ""
+        },
+        {
+          "field_id": 8244,
+          "field_label": "Significance/background",
+          "field_value": "<p>The West African Ebola outbreak of 2013-2016 caused over 11,000 deaths and devastated the already fragile health systems of Liberia, Sierra Leone, and Guinea. During the crisis, staffing shortages, quarantines, interruptions to supply chain, health facility closures and fear of health facilities and workers resulted in significant disruptions to the provision and utilization of a range of health services, including inpatient health services and surgery,  malaria treatment, vaccinations, obstetric care, and family planning. The UN released a Gender Alert in February 2015 noting that reduced access to contraceptives as a result of the Ebola crisis would put women at an increased risk of unintended pregnancy. A study of the impact of Ebola on reproductive health care in one district in Guinea found a 50% decline in family planning visits during the height of the crisis. Prior to the crisis, Liberia and Sierra Leone had seen gains in expanding contraceptive prevalence while Guinea’s prevalence remained low and relatively constant. Understanding the impact of the crisis on family planning provision is essential for future efforts to expand access to contraception in these countries. </p>",
+          "url": ""
+        },
+        {
+          "field_id": 8245,
+          "field_label": "Main question/hypothesis",
+          "field_value": "<p>Complex emergencies, like the West African Ebola crisis, can devastate a health system long after the immediate crisis ends.  Our research sets out to answer two questions:</p><ol>\t<li>How much did family planning provision decrease during the Ebola crisis?</li>\t<li>Did the Ebola crisis have a lasting negative impact on family planning provision?</li></ol>",
+          "url": ""
+        },
+        {
+          "field_id": 8247,
+          "field_label": "Methodology",
+          "field_value": "<p>We examine monthly provision of family planning services from 6 months before the first Ebola case in each country to 24 months after the last case of the main outbreak.  Weekly numbers of new confirmed Ebola cases over the time frame are taken from the World Health Organization and are disaggregated to the first subnational administrative regions.  Sierra Leone and Liberia collect electronic, routine data (henceforth referred to as service statistics) on family planning monthly.  These data were aggregated to the first subnational administrative region and provided to the authors by the Ministries of Health in each country.  Both countries use the District Health Information System (DHIS2).  Because Guinea’s electronic routine data system (DHIS2) was only implemented in 2015, and there have been challenges incorporating past data from paper records, we are unable to include it in this analysis.  Due to family planning data being available monthly, and Ebola data available weekly, we aggregate Ebola data by month.</p><div> <div><p></p></div></div>",
+          "url": ""
+        },
+        {
+          "field_id": 8249,
+          "field_label": "Results/key findings",
+          "field_value": "<p>During the Ebola crisis in Liberia, the lowest level of family planning service provision was August 2014, when only the equivalent of 4054 CYPs were distributed, a 65% reduction compared to the six-month average before the first Ebola case.  Between June and July 2014 (when the number of cases increase from 78 to 193), CYPs declined by 33% month on month, then from July to August experienced another 44% decline, while the number of Ebola cases skyrocketed to 874.  On average, during the whole of the Ebola crisis in Liberia, there was a monthly distribution of 8890 CYPs, a decline of 23% from the six month period prior.</p><div><p>In Sierra Leone, the level of family planning service provision was seen in December 2014 (November 2014 saw the record number of Ebola cases), when 11602 CYPs were distributed, a 23% decline from the 6 month period prior to the first case of Ebola.  Over the 16 months of the Ebola epidemic in Sierra Leone, on average CYPs were only 5% lower than before the Ebola epidemic (Figure 3).  This average decline is relatively small because family planning service provision returned to pre-Ebola levels by May 2015, 3 months before the last Ebola case was recorded. </p><div><p></p></div></div>",
+          "url": ""
+        },
+        {
+          "field_id": 8250,
+          "field_label": "Knowledge contribution",
+          "field_value": "<p>Complex emergencies like the West African Ebola crisis can devastate the health care system, disconnecting people from their communities and regular health care providers and disrupting routine and emergency services. In complex emergencies, women are often especially vulnerable, as was seen during the Ebola crisis, with greater risk of exposure to Ebola resulting from cultural and traditional practices and greater risk of negative health outcomes and unintended pregnancy resulting from reduced access to reproductive and maternal health care<sup>5,10</sup>. This research investigates the extent to which provision and utilization of family planning services are affected during a complex emergency, the amount of time needed to restore services, and whether long-term effects on service provision persist.  The preliminary results indicate that the family planning health sector can recover (and continue to improve) following a significant disruption, and is a lesson in resilience.</p><p>Acknowledgements</p><p>Special thanks to the Ministries of Health in Liberia and Sierra Leone for their technical support.  This research is part of the Track20 Project which monitors family planning use in the world’s 69 poorest counties.  Track20 is supported by the Bill and Melinda Gates Foundation.</p>",
+          "url": ""
+        },
+        {
+          "field_id": 8254,
+          "field_label": "Upload Presentation",
+          "field_value": "UploadPresentation_1298_1031082719.ppt",
+          "url": "http://amz.xcdsystem.com/8BE7A6B8-A495-161A-B3C1DC16670790EF_abstract_File8254/UploadPresentation_1298_1031082719.ppt"
+        },
+        {
+          "field_id": 9339,
+          "field_label": "Are you willing to present your abstract as a poster if not selected for oral presentation?",
+          "field_value": "Yes",
+          "url": ""
+        },
+        {
+          "field_id": 9369,
+          "field_label": "Are you willing to participate in a non-traditional/interactive oral presentation session?",
+          "field_value": "Yes",
+          "url": ""
+        },
+        {
+          "field_id": 8238,
+          "field_label": "Is your abstract about Rwanda or does it use data from Rwanda?",
+          "field_value": "No",
+          "url": ""
+        },
+        {
+          "field_id": 8234,
+          "field_label": "Is the presenter of the abstract under the age of 35 (by April 13, 2018) ?",
+          "field_value": "Yes",
+          "url": ""
+        }
+      ],
+      "EndTime": "",
+      "Title": "Family Planning During and After the Ebola Crisis: Evidence from Liberia and Sierra Leone",
+      "Authors": [
+        {
+          "NameSuffix": "PhD",
+          "State": "CT",
+          "Firstname": "Kristin",
+          "Email": "kbietsch@avenirhealth.org",
+          "Presenter": 1,
+          "ContactID": 10600,
+          "NamePrefix": "Ms.",
+          "Company": "Avenir Health",
+          "City": "Glastonbury",
+          "Country": "United States",
+          "Lastname": "Bietsch",
+          "ContactTitle": "Data Analyst",
+          "Middle": "",
+          "Orderof": 1
+        },
+        {
+          "NameSuffix": "",
+          "State": "DC",
+          "Firstname": "Jessica",
+          "Email": "jwilliamson@avenirhealth.org",
+          "Presenter": 0,
+          "ContactID": 10606,
+          "NamePrefix": "Ms.",
+          "Company": "Avenir Health",
+          "City": "Washington",
+          "Country": "United States",
+          "Lastname": "Williamson",
+          "ContactTitle": "Research Analyst",
+          "Middle": "",
+          "Orderof": 2
+        }
+      ],
+      "ID": "2.3.9.1",
+      "InternalID": "167678",
+      "Type": "submitted_item",
+      "Orderof": 2
+    },
+    {
+      "Withdrawn": 0,
+      "StartTime": "",
+      "Description": [
+        {
+          "field_id": 8242,
+          "field_label": "Which does your abstract address?",
+          "field_value": "Effective program practices",
+          "url": ""
+        },
+        {
+          "field_id": 8236,
+          "field_label": "In which language is your abstract written?",
+          "field_value": "English",
+          "url": ""
+        },
+        {
+          "field_id": 8239,
+          "field_label": "Track (First choice)",
+          "field_value": "Family planning and reproductive health in humanitarian settings",
+          "url": ""
+        },
+        {
+          "field_id": 9338,
+          "field_label": "Optional second choice track",
+          "field_value": "Expanding access to family planning",
+          "url": ""
+        },
+        {
+          "field_id": 8243,
+          "field_label": "Title",
+          "field_value": "The Zika Contraception Access Network: A Feasibility Program to Increase Access to Contraception in Puerto Rico during the Zika Virus Outbreak ",
+          "url": ""
+        },
+        {
+          "field_id": 8244,
+          "field_label": "Significance/background",
+          "field_value": "<p><strong>Background:</strong> Prevention of unintended pregnancy is a primary strategy to reduce adverse Zika-related pregnancy and birth outcomes, including microcephaly and other severe birth defects. The threat of adverse reproductive outcomes associated with the Zika virus intensifies the need for access to contraception among women who choose to delay or avoid pregnancy during a Zika outbreak.. During the 2016-2017 Zika virus outbreak, Puerto Rico had the highest number of Zika virus infections in the United States. Puerto Rico also had a high proportion of unintended pregnancies and limited access to contraception, including long-acting reversible contraception (LARC). </p>",
+          "url": ""
+        },
+        {
+          "field_id": 8246,
+          "field_label": "Program intervention/activity tested",
+          "field_value": "<p><strong>Program intervention:</strong> To address these barriers, the Zika Contraception Access Network (Z-CAN) was established as a short-term emergency response for rapid implementation of reversible contraceptive services. The objective of Z-CAN was to build a network of health care providers offering client-centered contraceptive counseling and the full range of reversible contraception at no cost to women in Puerto Rico who chose to prevent pregnancy during the Zika virus outbreak. </p>",
+          "url": ""
+        },
+        {
+          "field_id": 8248,
+          "field_label": "Methodology ",
+          "field_value": "<p><strong>Methodology: </strong>Z-CAN was developed by establishing partnerships, securing private donations for a supply of reversible contraception, building capacity in contraception service provision among providers, and collecting programmatic data to monitor progress. The Z-CAN program was rapidly designed and scaled-up from May – November 2016 and continued to provide contraception services to women in Puerto Rico through September 2017.  Baseline characteristics of the provider network and the over 28,000 participants served by the Z-CAN program across Puerto Rico are described.</p><p></p>",
+          "url": ""
+        },
+        {
+          "field_id": 8249,
+          "field_label": "Results/key findings",
+          "field_value": "<p><strong>Key Findings:</strong> 177 physicians participated in one of eight Z-CAN trainings. Of those, 153 (141 obstetrician gynecologists and 12 family physicians or pediatricians) participated in Z-CAN. Ninety-six percent of women seeking Z-CAN services received same-day provision of a reversible contraceptive method. While only 4% of women used a LARC method prior to Z-CAN, 70% chose and received a LARC method at their initial visit. Among women who received a LARC method, 75.7% used no method or a least effective method (i.e., condoms or withdrawal) prior to their Z-CAN visit. </p>",
+          "url": ""
+        },
+        {
+          "field_id": 8251,
+          "field_label": "Program implications/lessons learned",
+          "field_value": "<p><strong>Program implications:</strong> Z-CAN was designed as a short-term response for rapid implementation of reversible contraceptive services in a complex emergency setting in Puerto Rico and has served over 28,000 women.  Z-CAN strategies and lessons learned can be replicated or adapted in other emergency preparedness and response efforts that pose a risk to pregnant women and their infants or in non-emergency settings in which the goal is to increase access to contraception and improve health outcomes.</p>",
+          "url": ""
+        },
+        {
+          "field_id": 8254,
+          "field_label": "Upload Presentation",
+          "field_value": "UploadPresentation_260_1104035307.pdf",
+          "url": "http://amz.xcdsystem.com/8BE7A6B8-A495-161A-B3C1DC16670790EF_abstract_File8254/UploadPresentation_260_1104035307.pdf"
+        },
+        {
+          "field_id": 9339,
+          "field_label": "Are you willing to present your abstract as a poster if not selected for oral presentation?",
+          "field_value": "No",
+          "url": ""
+        },
+        {
+          "field_id": 9369,
+          "field_label": "Are you willing to participate in a non-traditional/interactive oral presentation session?",
+          "field_value": "Yes",
+          "url": ""
+        },
+        {
+          "field_id": 8238,
+          "field_label": "Is your abstract about Rwanda or does it use data from Rwanda?",
+          "field_value": "No",
+          "url": ""
+        },
+        {
+          "field_id": 8234,
+          "field_label": "Is the presenter of the abstract under the age of 35 (by April 13, 2018) ?",
+          "field_value": "No",
+          "url": ""
+        }
+      ],
+      "EndTime": "",
+      "Title": "The Zika Contraception Access Network: A Feasibility Program to Increase Access to Contraception in Puerto Rico during the Zika Virus Outbreak ",
+      "Authors": [
+        {
+          "NameSuffix": "MD, MPH",
+          "State": "Georgia",
+          "Firstname": "Eva",
+          "Email": "elathro@emory.edu",
+          "Presenter": 1,
+          "ContactID": 8274,
+          "NamePrefix": "Dr.",
+          "Company": "Emory University",
+          "City": "Atlanta",
+          "Country": "United States",
+          "Lastname": "Lathrop",
+          "ContactTitle": "Associate Professor, Obstetrics and Gynecology",
+          "Middle": "",
+          "Orderof": 1
+        },
+        {
+          "NameSuffix": "",
+          "State": "Georgia",
+          "Firstname": "Stacey ",
+          "Email": "svh4@cdc.gov",
+          "Presenter": 0,
+          "ContactID": 8436,
+          "NamePrefix": "Ms.",
+          "Company": "US Centers for Disease Control and Prevention",
+          "City": "Atlanta",
+          "Country": "United States",
+          "Lastname": "Hurst",
+          "ContactTitle": "",
+          "Middle": "",
+          "Orderof": 2
+        },
+        {
+          "NameSuffix": "PhD",
+          "State": "GA",
+          "Firstname": "Lauren",
+          "Email": "dvq8@cdc.gov",
+          "Presenter": 0,
+          "ContactID": 2485,
+          "NamePrefix": "Dr.",
+          "Company": "Centers for Disease Control and Prevention",
+          "City": "ATL",
+          "Country": "United States",
+          "Lastname": "Zapata",
+          "ContactTitle": "",
+          "Middle": "",
+          "Orderof": 3
+        },
+        {
+          "NameSuffix": "",
+          "State": "Georgia",
+          "Firstname": "Zipatly ",
+          "Email": "zmendoza@cdcfoundation.org",
+          "Presenter": 0,
+          "ContactID": 8433,
+          "NamePrefix": "Ms.",
+          "Company": "CDC Foundation",
+          "City": "Atlanta",
+          "Country": "United States",
+          "Lastname": "Mendoza",
+          "ContactTitle": "",
+          "Middle": "",
+          "Orderof": 4
+        },
+        {
+          "NameSuffix": "",
+          "State": "Georgia",
+          "Firstname": "Lisa",
+          "Email": "eon1@cdc.gov",
+          "Presenter": 0,
+          "ContactID": 8435,
+          "NamePrefix": "Dr.",
+          "Company": "US Centers for Disease Control ",
+          "City": "Atlanta",
+          "Country": "United States",
+          "Lastname": "Romero",
+          "ContactTitle": "",
+          "Middle": "",
+          "Orderof": 5
+        }
+      ],
+      "ID": "2.3.9.4",
+      "InternalID": "165279",
+      "Type": "submitted_item",
+      "Orderof": 3
+    },
+    {
+      "Withdrawn": 0,
+      "StartTime": "",
+      "Description": [
+        {
+          "field_id": 8242,
+          "field_label": "Which does your abstract address?",
+          "field_value": "Effective program practices",
+          "url": ""
+        },
+        {
+          "field_id": 8236,
+          "field_label": "In which language is your abstract written?",
+          "field_value": "English",
+          "url": ""
+        },
+        {
+          "field_id": 10113,
+          "field_label": "In which language will your abstract be presented?",
+          "field_value": "English",
+          "url": ""
+        },
+        {
+          "field_id": 8239,
+          "field_label": "Track (First choice)",
+          "field_value": "Family planning and reproductive health in humanitarian settings",
+          "url": ""
+        },
+        {
+          "field_id": 9338,
+          "field_label": "Optional second choice track",
+          "field_value": "Expanding access to family planning",
+          "url": ""
+        },
+        {
+          "field_id": 8243,
+          "field_label": "Title",
+          "field_value": "Integrating cervical cancer screening and preventative treatment with family planning and HIV related services through MISP relief response in Tonga",
+          "url": ""
+        },
+        {
+          "field_id": 8244,
+          "field_label": "Significance/background",
+          "field_value": "<p>Cervical cancer is the fourth most common female cancer worldwide, with 85% of incident cases occurring in low‐resource regions.1 The incidence rate for cervical cancer is 16 per 100,000 in Tonga, where it is the leading cause of cancer among women in Tonga. Whilst evidence‐based global guidelines for early detection and treatment of precancerous lesions are available to support program planning, implementation, and evaluation in Tonga,  cervical cancer screening coverage remains limited. <span style=\"color: rgb(51, 51, 51); font-family: sans-serif, Arial, Verdana, &quot;Trebuchet MS&quot;; font-size: 13px; background-color: rgb(255, 255, 255);\">In a disaster / humanitarian setting, the </span><span style=\"color: rgb(51, 51, 51); font-family: sans-serif, Arial, Verdana, &quot;Trebuchet MS&quot;; font-size: 13px; background-color: rgb(255, 255, 255);\">MISP model enhanced coverage of </span><span style=\"color: rgb(51, 51, 51); font-family: sans-serif, Arial, Verdana, &quot;Trebuchet MS&quot;; font-size: 13px; background-color: rgb(255, 255, 255);\">cervical cancer screening in Tonga. The MISP /</span>SRH response activities in the aftermath of Tropical Cyclone Gita presented therefore was an opportunity to increase screening services as well as expand access to FP. Whilst providing women's access to cervical cancer screening services,  HIV Syphilis Testing was also offered during the crisis response. </p>",
+          "url": ""
+        },
+        {
+          "field_id": 8246,
+          "field_label": "Program intervention/activity tested",
+          "field_value": "<p>Cervical cancer screening services was intergated within the  Minimum Initial Services Package (MISP) during the SRHR response following the aftermath of  tropical cyclone Gita in Tonga, 12th February 2018. Cervical cancer services were also integrated into HIV/AIDS programming during the MISP Relief Response. Women accessing screening services were also asked if they would like to voluntary take the HIV and Syphilis test due to their risky lifestyles and vulnerabilities.</p>",
+          "url": ""
+        },
+        {
+          "field_id": 8248,
+          "field_label": "Methodology ",
+          "field_value": "<p>Primary data from field response conducted in SRH mobile clinic outreach was used for this paper. As well, a desk review  was conducted to identify programs in MISP in which cervical cancer prevention services have been integrated into family planning and HIV/AIDS service delivery platforms. A search of the grey literature on integrated SRH programs was performed to identify case studies or other materials. Following the desk review, Tonga program reports were reviewed and semi structured telephone interviews were conducted with field teams from ‘Eua, and Tongatapu, staff from key regional organizations (IPPF & UNFPA). </p>",
+          "url": ""
+        },
+        {
+          "field_id": 8249,
+          "field_label": "Results/key findings",
+          "field_value": "<p>Integrated service delivery through this program has resulted in increased use of both cervical cancer and family planning services. In Tonga, following the introduction of cervical cancer screening and preventive treatment—into a program with a range of contraceptive method options—uptake for both intrauterine devices (IUDs) and Depo among clients attending static clinics <u>increased three‐fold, </u>suggesting a synergistic effect of offering multiple services. Among clients who participated in exit interviews, <u>77% reported having received additional services during their visit for cervical cancer screening</u>; most commonly cited were clients receiving family planning counselling (unpublished program data). Dual service uptake was most common among women who chose IUDs, of whom 73% were screened for cervical cancer (unpublished program data). </p>",
+          "url": ""
+        },
+        {
+          "field_id": 8251,
+          "field_label": "Program implications/lessons learned",
+          "field_value": "<p><span style=\"color: rgb(51, 51, 51); font-family: sans-serif, Arial, Verdana, &quot;Trebuchet MS&quot;; font-size: 13px; background-color: rgb(255, 255, 255);\">Key lessons learnt: These data highlight the benefit of integrated SRH service offerings, which ensure that women access services to meet all of their individual needs.</span>Improved targeting for high‐risk populations. Efficient and cost‐effective use of resources and infrastructure. Increased access and uptake of SRH services. Increased knowledge and improved skills of formal and informal service providers. Strengthening an enabling environment for integrated service delivery</p>",
+          "url": ""
+        },
+        {
+          "field_id": 8254,
+          "field_label": "Upload Presentation",
+          "field_value": "UploadPresentation_889_1105032004.pptx",
+          "url": "http://amz.xcdsystem.com/8BE7A6B8-A495-161A-B3C1DC16670790EF_abstract_File8254/UploadPresentation_889_1105032004.pptx"
+        },
+        {
+          "field_id": 9339,
+          "field_label": "Are you willing to present your abstract as a poster if not selected for oral presentation?",
+          "field_value": "Yes",
+          "url": ""
+        },
+        {
+          "field_id": 9369,
+          "field_label": "Are you willing to participate in a non-traditional/interactive oral presentation session?",
+          "field_value": "Yes",
+          "url": ""
+        },
+        {
+          "field_id": 8238,
+          "field_label": "Is your abstract about Rwanda or does it use data from Rwanda?",
+          "field_value": "No",
+          "url": ""
+        },
+        {
+          "field_id": 8234,
+          "field_label": "Is the presenter of the abstract under the age of 35 (by April 13, 2018) ?",
+          "field_value": "No",
+          "url": ""
+        }
+      ],
+      "EndTime": "",
+      "Title": "Integrating cervical cancer screening and preventative treatment with family planning and HIV related services through MISP relief response in Tonga",
+      "Authors": [
+        {
+          "NameSuffix": "Ms",
+          "State": "Nukualofa",
+          "Firstname": "Katherine ",
+          "Email": "kmafi@tongafamilyhealth.org.to",
+          "Presenter": 1,
+          "ContactID": 9939,
+          "NamePrefix": "Ms.",
+          "Company": "Tonga Family Health Association ",
+          "City": "Tongatapu",
+          "Country": "Tonga",
+          "Lastname": "MAFI",
+          "ContactTitle": "Program Manager",
+          "Middle": "",
+          "Orderof": 1
+        }
+      ],
+      "ID": "2.3.9.2",
+      "InternalID": "167089",
+      "Type": "submitted_item",
+      "Orderof": 4
+    }
+  ],
+  "FeatureImageURL": "",
+  "SessionStartTime": "2018-11-14 14:35:00",
+  "TrackName": "Family planning and reproductive health in humanitarian settings",
+  "SessionType": "Oral",
+  "SessionRoom": "AD4",
+  "SessionDescription": ""
+}

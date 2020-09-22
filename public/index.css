@@ -151,6 +151,15 @@ h2 + .timeslot {
   column-gap: 1.25em;
 }
 
+#type-abstracts .columns {
+  -webkit-column-count: 1; /* Chrome, Safari, Opera */
+  -moz-column-count: 1; /* Firefox */
+  column-count: 1;
+  -webkit-column-gap: 0m; /* Chrome, Safari, Opera */
+  -moz-column-gap: 0; /* Firefox */
+  column-gap: 0;
+}
+
 /* print page breaks and such? */
 /* control print breaks on main dates/times, etc. */
 .poster-session,
@@ -463,3 +472,31 @@ strong.smallcaps {
   text-indent: -2em;
   padding-left: 2em;
 }
+
+/* some custom side events stuff.
+.description {
+  page-break-inside: avoid;
+}
+
+.presentation.x31096,
+.presentation.x31078,
+.presentation.x31097,
+.presentation.x31135,
+.presentation.x31103,
+.presentation.x31104,
+.presentation.x31105,
+.presentation.x31106,
+.presentation.x31107,
+.presentation.x31139,
+.presentation.x31141,
+.presentation.x31111,
+.presentation.x31143,
+.presentation.x31061,
+.presentation.x31115,
+.presentation.x31094,
+.presentation.x31125,
+.presentation.x31108,
+.presentation {
+  page-break-inside: avoid;
+}
+*/

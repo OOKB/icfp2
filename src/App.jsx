@@ -13,10 +13,12 @@ const data = buildData(items)
 const family = data.overviewTracks.returnsInvestmentFamilyPlanningDemographicDividend
 const reproductive = data.overviewTracks.sexualReproductiveHealthRightsAmongAdolescentsYouth
 const faith = data.overviewTracks.faithFamilyPlanning
+const urban = data.overviewTracks.urbanizationReproductiveHealth
 const pages = {
   '/opening': { items: data.opening, layout: 'sessions' },
   '/workshop': { items: data.workshop, layout: 'sessions' },
   '/sessions': { items: data.sessions, layout: 'sessions' },
+  '/abstracts': { items: data.sessions, layout: 'abstracts' },
   '/posters': { items: data.posters, layout: 'posters', keyId: 'sessionCode' },
   '/authors': { items: authors, layout: 'authors', keyId: 'id' },
   '/overview': { items: data.overview, layout: 'overview' },
@@ -24,6 +26,7 @@ const pages = {
   '/overview/family': { items: family, layout: 'overview' },
   '/overview/reproductive': { items: reproductive, layout: 'overview' },
   '/overview/faith': { items: faith, layout: 'overview' },
+  '/overview/urban': { items: urban, layout: 'overview' },
 }
 
 const App = ({ dispatch, pathname }) => {

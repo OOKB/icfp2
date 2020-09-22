@@ -30,6 +30,7 @@ const getOverviewTracks = _.flow(
   _.pick([
     'returnsInvestmentFamilyPlanningDemographicDividend',
     'sexualReproductiveHealthRightsAmongAdolescentsYouth',
+    'urbanizationReproductiveHealth',
     'faithFamilyPlanning']),
   _.mapValues(addGrouping),
 )

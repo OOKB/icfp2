@@ -17,7 +17,7 @@ function PerformedPanel(props) {
     DescriptionEl = <div className="description" dangerouslySetInnerHTML={{ __html: sessionDescription }} />
   }
 
-  const whereToBreak = `presentation ${sessionCode}`
+  const whereToBreak = `presentation x${sessionCode}`
 
   return (
     <div className={whereToBreak}>

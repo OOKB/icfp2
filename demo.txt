@@ -1,0 +1,55 @@
+"Title": "Integrating cervical cancer screening and preventative treatment with family planning and HIV related services through MISP relief response in Tonga",
+
+"Authors": [
+{
+"NameSuffix": "Ms",
+"State": "Nukualofa",
+"Firstname": "Katherine ",
+"Email": "kmafi@tongafamilyhealth.org.to",
+"Presenter": 1,
+"ContactID": 9939,
+"NamePrefix": "Ms.",
+"Company": "Tonga Family Health Association ",
+"City": "Tongatapu",
+"Country": "Tonga",
+"Lastname": "MAFI",
+"ContactTitle": "Program Manager",
+"Middle": "",
+"Orderof": 1
+}
+],
+
+"ID": "2.3.9.2",
+
+"field_label": "Which does your abstract address?",
+"field_value": "Effective program practices",
+
+"field_label": "In which language is your abstract written?",
+"field_value": "English",
+
+"field_label": "In which language will your abstract be presented?",
+"field_value": "English",
+
+"field_label": "Track (First choice)",
+"field_value": "Family planning and reproductive health in humanitarian settings",
+
+"field_label": "Optional second choice track",
+"field_value": "Expanding access to family planning",
+
+"field_label": "Title",
+"field_value": "Integrating cervical cancer screening and preventative treatment with family planning and HIV related services through MISP relief response in Tonga",
+
+"field_label": "Significance/background",
+"field_value": "<p>Cervical cancer is the fourth most common female cancer worldwide, with 85% of incident cases occurring in low‐resource regions.1 The incidence rate for cervical cancer is 16 per 100,000 in Tonga, where it is the leading cause of cancer among women in Tonga. Whilst evidence‐based global guidelines for early detection and treatment of precancerous lesions are available to support program planning, implementation, and evaluation in Tonga,  cervical cancer screening coverage remains limited. <span style=\"color: rgb(51, 51, 51); font-family: sans-serif, Arial, Verdana, &quot;Trebuchet MS&quot;; font-size: 13px; background-color: rgb(255, 255, 255);\">In a disaster / humanitarian setting, the </span><span style=\"color: rgb(51, 51, 51); font-family: sans-serif, Arial, Verdana, &quot;Trebuchet MS&quot;; font-size: 13px; background-color: rgb(255, 255, 255);\">MISP model enhanced coverage of </span><span style=\"color: rgb(51, 51, 51); font-family: sans-serif, Arial, Verdana, &quot;Trebuchet MS&quot;; font-size: 13px; background-color: rgb(255, 255, 255);\">cervical cancer screening in Tonga. The MISP /</span>SRH response activities in the aftermath of Tropical Cyclone Gita presented therefore was an opportunity to increase screening services as well as expand access to FP. Whilst providing women's access to cervical cancer screening services,  HIV Syphilis Testing was also offered during the crisis response. </p>",
+
+"field_label": "Program intervention/activity tested",
+"field_value": "<p>Cervical cancer screening services was intergated within the  Minimum Initial Services Package (MISP) during the SRHR response following the aftermath of  tropical cyclone Gita in Tonga, 12th February 2018. Cervical cancer services were also integrated into HIV/AIDS programming during the MISP Relief Response. Women accessing screening services were also asked if they would like to voluntary take the HIV and Syphilis test due to their risky lifestyles and vulnerabilities.</p>",
+
+"field_label": "Methodology ",
+"field_value": "<p>Primary data from field response conducted in SRH mobile clinic outreach was used for this paper. As well, a desk review  was conducted to identify programs in MISP in which cervical cancer prevention services have been integrated into family planning and HIV/AIDS service delivery platforms. A search of the grey literature on integrated SRH programs was performed to identify case studies or other materials. Following the desk review, Tonga program reports were reviewed and semi structured telephone interviews were conducted with field teams from ‘Eua, and Tongatapu, staff from key regional organizations (IPPF & UNFPA). </p>",
+
+"field_label": "Results/key findings",
+"field_value": "<p>Integrated service delivery through this program has resulted in increased use of both cervical cancer and family planning services. In Tonga, following the introduction of cervical cancer screening and preventive treatment—into a program with a range of contraceptive method options—uptake for both intrauterine devices (IUDs) and Depo among clients attending static clinics <u>increased three‐fold, </u>suggesting a synergistic effect of offering multiple services. Among clients who participated in exit interviews, <u>77% reported having received additional services during their visit for cervical cancer screening</u>; most commonly cited were clients receiving family planning counselling (unpublished program data). Dual service uptake was most common among women who chose IUDs, of whom 73% were screened for cervical cancer (unpublished program data). </p>",
+
+"field_label": "Program implications/lessons learned",
+"field_value": "<p><span style=\"color: rgb(51, 51, 51); font-family: sans-serif, Arial, Verdana, &quot;Trebuchet MS&quot;; font-size: 13px; background-color: rgb(255, 255, 255);\">Key lessons learnt: These data highlight the benefit of integrated SRH service offerings, which ensure that women access services to meet all of their individual needs.</span>Improved targeting for high‐risk populations. Efficient and cost‐effective use of resources and infrastructure. Increased access and uptake of SRH services. Increased knowledge and improved skills of formal and informal service providers. Strengthening an enabling environment for integrated service delivery</p>",
