@@ -6,7 +6,7 @@
     "@react-pdf/node": "^0.7.6",
     "@react-pdf/renderer": "^1.0.0-alpha.15",
     "ajv": "^6.5.3",
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "better-console": "^1.0.1",
     "cape-lodash": "^1.13.2",
     "cape-style": "^1.1.0",
