@@ -27,7 +27,7 @@
     "redux-history-component": "^2.2.0",
     "redux-history-sync": "^3.2.2",
     "redux-thunk": "^2.3.0",
-    "sanitize-html": "^1.19.0"
+    "sanitize-html": "^2.3.2"
   },
   "scripts": {
     "save": "babel-node --presets=react,env src/save",
